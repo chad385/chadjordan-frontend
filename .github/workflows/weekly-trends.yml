@@ -1,0 +1,43 @@
+name: Weekly Trend Scan
+
+# Manual-first by design. This calls the Backend Starter's implemented
+# /api/trend-scan route to add fresh ideas to content_calendar.
+# Requirements before enabling the schedule:
+# - Backend deployed and reachable at vars.SITE_URL
+# - GitHub secret API_SECRET_KEY matches the backend API_SECRET_KEY
+# - Backend ANTHROPIC_API_KEY is set
+# - brand_context is seeded
+# - Safe mode reviewed first; autonomous mode will auto-approve new ideas
+
+on:
+  # schedule:
+  #   # Monday at 10am UTC
+  #   - cron: '7 10 * * 1'
+  workflow_dispatch: {}
+
+jobs:
+  trend-scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Scan trends and update calendar
+        env:
+          API_SECRET_KEY: ${{ secrets.API_SECRET_KEY }}
+          SITE_URL: ${{ vars.SITE_URL }}
+        run: |
+          TIMESTAMP="$(date +%s)"
+          BODY='{}'
+          SIGNING_INPUT="POST:/api/trend-scan:${TIMESTAMP}:${BODY}"
+          SIGNATURE="$(printf "%s" "${SIGNING_INPUT}" | openssl dgst -sha256 -hmac "${API_SECRET_KEY}" -hex | awk '{print $2}')"
+
+          curl --fail-with-body \
+            -X POST "${SITE_URL}/api/trend-scan" \
+            -H "Content-Type: application/json" \
+            -H "x-api-key: ${API_SECRET_KEY}" \
+            -H "x-timestamp: ${TIMESTAMP}" \
+            -H "x-signature: ${SIGNATURE}" \
+            -d "${BODY}"
+
+      - name: Summary
+        if: always()
+        run: echo "Trend scan completed with exit code $?"

@@ -1,0 +1,151 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* ============================================
+   Digital Home Design Tokens
+   Values are NOT hardcoded here — they're injected as :root custom
+   properties from design-system/tokens.json by src/app/layout.tsx
+   (see src/lib/theme/tokens.ts). This block only maps those variables
+   onto Tailwind's theme namespace so utility classes can consume them.
+   To change the theme, edit design-system/tokens.json, not this file.
+   ============================================ */
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-brand-primary: var(--brand-primary);
+  --color-brand-secondary: var(--brand-secondary);
+  --color-brand-accent: var(--brand-accent);
+  --color-brand-highlight: var(--brand-highlight);
+  --color-neutral-50: var(--neutral-50);
+  --color-neutral-100: var(--neutral-100);
+  --color-neutral-200: var(--neutral-200);
+  --color-neutral-300: var(--neutral-300);
+  --color-neutral-400: var(--neutral-400);
+  --color-neutral-500: var(--neutral-500);
+  --color-neutral-600: var(--neutral-600);
+  --color-neutral-700: var(--neutral-700);
+  --color-neutral-800: var(--neutral-800);
+  --color-neutral-900: var(--neutral-900);
+  --color-neutral-950: var(--neutral-950);
+  --color-success: var(--color-success);
+  --color-warning: var(--color-warning);
+  --color-error: var(--color-error);
+  --color-info: var(--color-info);
+  --color-surface-page: var(--surface-page);
+  --color-surface-card: var(--surface-card);
+  --color-surface-elevated: var(--surface-elevated);
+
+  /* Rebind Tailwind's built-in white/black to the neutral scale so every
+     plain text-white / bg-black / border-white-with-opacity utility already
+     used across the components is token-driven with no per-usage rewrite —
+     editing tokens.json's neutral.50 / neutral.950 propagates everywhere. */
+  --color-white: var(--neutral-50);
+  --color-black: var(--neutral-950);
+
+  /* Typography — indirected through :root so the family names come from
+     tokens.json (see layout.tsx), not a literal string here. */
+  --font-sans: var(--font-sans);
+  --font-heading: var(--font-heading);
+  --font-mono: var(--font-mono);
+
+  /* Radii (exposed for future use — components currently use Tailwind's
+     standard radius scale via arbitrary values, since border radius isn't
+     brand-differentiating the way color/type are) */
+  --radius-token-sm: var(--radius-sm);
+  --radius-token-md: var(--radius-md);
+  --radius-token-lg: var(--radius-lg);
+  --radius-token-xl: var(--radius-xl);
+  --radius-token-2xl: var(--radius-2xl);
+  --radius-token-3xl: var(--radius-3xl);
+
+  /* Shadows */
+  --shadow-sm: var(--shadow-sm);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+
+  /* Animation */
+  --animate-duration-fast: var(--animate-duration-fast);
+  --animate-duration-normal: var(--animate-duration-normal);
+  --animate-duration-slow: var(--animate-duration-slow);
+  --ease-default: var(--ease-default);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+}
+
+/* Article body fallback styles.
+   The blog template also uses Tailwind Typography's `prose` classes, but these
+   rules preserve readable hierarchy if the plugin is removed during branding. */
+.article-body {
+  font-size: 1.125rem;
+  line-height: 1.85;
+  color: var(--neutral-300);
+}
+
+.article-body > * + * {
+  margin-top: 1.25rem;
+}
+
+.article-body h2 {
+  margin-top: 2.75rem;
+  margin-bottom: 0.9rem;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  line-height: 1.08;
+  font-weight: 700;
+  letter-spacing: 0;
+  color: var(--neutral-50);
+}
+
+.article-body h3 {
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  font-size: clamp(1.35rem, 3vw, 1.75rem);
+  line-height: 1.18;
+  font-weight: 700;
+  letter-spacing: 0;
+  color: var(--neutral-100);
+}
+
+.article-body p,
+.article-body li {
+  color: var(--neutral-300);
+}
+
+.article-body strong {
+  color: var(--neutral-50);
+  font-weight: 700;
+}
+
+.article-body ul,
+.article-body ol {
+  padding-left: 1.35rem;
+}
+
+.article-body ul {
+  list-style: disc;
+}
+
+.article-body ol {
+  list-style: decimal;
+}
+
+.article-body blockquote {
+  border-left: 2px solid var(--brand-accent);
+  padding-left: 1.25rem;
+  color: var(--neutral-100);
+  font-style: italic;
+}
+
+.article-body a {
+  color: var(--neutral-50);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}

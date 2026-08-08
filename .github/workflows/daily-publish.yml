@@ -1,0 +1,46 @@
+name: Daily Article Publish
+
+on:
+  # Uncomment the schedule below after your Frontend + Backend are fully set up,
+  # deployed, and your GitHub Actions secrets/variables are configured.
+  # schedule:
+  #   # 9am UTC daily (adjust for your timezone)
+  #   - cron: '3 9 * * *'
+  workflow_dispatch:
+    inputs:
+      publish_mode:
+        description: 'Publishing mode'
+        required: false
+        default: 'safe'
+        type: choice
+        options:
+          - safe
+          - autonomous
+
+jobs:
+  write-article:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Write and publish article
+        env:
+          API_SECRET_KEY: ${{ secrets.API_SECRET_KEY }}
+          SITE_URL: ${{ vars.SITE_URL }}
+        run: |
+          MODE="${{ github.event.inputs.publish_mode || 'safe' }}"
+          TIMESTAMP="$(date +%s)"
+          BODY="{\"publish_mode\":\"${MODE}\"}"
+          SIGNING_INPUT="POST:/api/write-article:${TIMESTAMP}:${BODY}"
+          SIGNATURE="$(printf "%s" "${SIGNING_INPUT}" | openssl dgst -sha256 -hmac "${API_SECRET_KEY}" -hex | awk '{print $2}')"
+
+          curl --fail-with-body \
+            -X POST "${SITE_URL}/api/write-article" \
+            -H "Content-Type: application/json" \
+            -H "x-api-key: ${API_SECRET_KEY}" \
+            -H "x-timestamp: ${TIMESTAMP}" \
+            -H "x-signature: ${SIGNATURE}" \
+            -d "${BODY}"
+
+      - name: Summary
+        if: always()
+        run: echo "Article writing job completed with exit code $?"
