@@ -2,15 +2,7 @@ import Link from 'next/link';
 import Divergence from '@/components/compound/Divergence';
 import Reveal from '@/components/compound/Reveal';
 import LeadForm from '@/components/compound/LeadForm';
-
-const WORK = [
-  { n: '01 — Spec Campaign', img: '/work/nasa.png', title: 'NASA × Ralph Lauren', sub: 'Artemis Collection · Kennedy Space Center', tag: 'Spec' },
-  { n: '02 — Brand System', img: '/work/durindal.png', title: 'Durindal', sub: 'Tactical Luxury · DefenseTech GTM · Full Identity', tag: 'System' },
-  { n: '03 — Spec Campaign', img: '/work/gshock.png', title: 'G-Shock DW5600', sub: 'New England Fisherman · 5-Shot Series', tag: 'Spec' },
-  { n: '04 — Spec Campaign', img: '/work/panerai.png', title: 'Panerai Luminor Marina', sub: 'Open Water · Lifestyle Campaign', tag: 'Spec' },
-  { n: '05 — Automotive Editorial', img: '/work/porsche.png', title: 'Porsche 928', sub: 'The Forgotten Grand Tourer · Mood Direction', tag: 'Exploration' },
-  { n: '06 — Product', img: '/work/csgpro.png', title: 'CSG PRO', sub: 'Visual Direction System · 7-Layer Framework', tag: 'Commercial' },
-];
+import { WORK_CARDS } from '@/lib/work';
 
 const ROOMS = [
   { k: 'The gate', v: 'A site built as a commissioned piece, not skinned from a template. It captures the lead instead of losing it.' },
@@ -124,25 +116,37 @@ export default function HomePage() {
         <div className="max-w-[1200px] mx-auto">
           <p className="label">Selected Work</p>
           <div className="grid gap-5 mt-10 sm:grid-cols-2 lg:grid-cols-3">
-            {WORK.map((w) => (
-              <Reveal key={w.title} className="group relative overflow-hidden aspect-[4/5] hairline"
-                >
-                <figure className="absolute inset-0 m-0" style={{ border: '0.5px solid var(--border-hairline)' }}>
+            {WORK_CARDS.map((w) => {
+              const inner = (
+                <>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={w.img} alt={w.title}
-                    className="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-90 transition-opacity duration-500" />
+                    className="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-[1.03] transition-all duration-500" />
                   <div className="absolute inset-0"
                     style={{ background: 'linear-gradient(180deg, rgba(13,27,46,0.1) 30%, rgba(13,27,46,0.92) 100%)' }} />
-                  <figcaption className="absolute inset-0 flex flex-col justify-end p-6">
-                    <span className="label !text-[0.58rem]">{w.n}</span>
-                    <h3 className="font-heading text-white text-xl mt-2 leading-tight">{w.title}</h3>
+                  <div className="absolute inset-0 flex flex-col justify-end p-6">
+                    <h3 className="font-heading text-white text-xl leading-tight">{w.title}</h3>
                     <span className="text-text-muted text-[0.82rem] mt-1.5">{w.sub}</span>
-                  </figcaption>
+                    <span className="label !text-[0.55rem] text-text-accent mt-3 opacity-0 group-hover:opacity-100 transition-opacity">
+                      {w.external ? 'Open csgpro.app →' : 'View case study →'}
+                    </span>
+                  </div>
                   <span className="label absolute top-4 right-4 !text-[0.55rem] text-text-accent px-2 py-1"
                     style={{ border: '0.5px solid var(--border-accent-soft)' }}>{w.tag}</span>
-                </figure>
-              </Reveal>
-            ))}
+                </>
+              );
+              const cls = 'group relative block overflow-hidden aspect-[4/5]';
+              const style = { border: '0.5px solid var(--border-hairline)' };
+              return (
+                <Reveal key={w.title}>
+                  {w.external ? (
+                    <a href={w.href} target="_blank" rel="noreferrer" className={cls} style={style}>{inner}</a>
+                  ) : (
+                    <Link href={w.href} className={cls} style={style}>{inner}</Link>
+                  )}
+                </Reveal>
+              );
+            })}
           </div>
         </div>
       </section>
