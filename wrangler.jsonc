@@ -4,6 +4,12 @@
   "compatibility_date": "2026-05-01",
   "compatibility_flags": ["nodejs_compat"],
   "main": ".open-next/worker.js",
+  // Keep the workers.dev URL alive (the backend references it, and it's a
+  // fallback) alongside the production custom domain.
+  "workers_dev": true,
+  "routes": [
+    { "pattern": "chadjordan.studio", "custom_domain": true }
+  ],
   "assets": {
     "binding": "ASSETS",
     "directory": ".open-next/assets"
