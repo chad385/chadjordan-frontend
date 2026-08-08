@@ -52,7 +52,7 @@ export default function HomePage() {
           <p className="label">Creative Director / Brand Strategist</p>
           <h1 className="font-heading text-white mt-6 leading-[1.04] max-w-[18ch]"
             style={{ fontSize: 'clamp(2.4rem, 5.2vw, 4.6rem)', fontWeight: 400 }}>
-            Your rent compounds against you. Your <em>Compound</em> compounds for you.
+            Own the house.<br /><em>Hold the deed.</em>
           </h1>
           <p className="text-text-muted mt-7 max-w-[56ch] text-[1.05rem] leading-relaxed">
             A Compound is your whole business behind your own gates — the brand, the content, the CRM, and the
@@ -206,7 +206,8 @@ export default function HomePage() {
           </div>
           <div className="hairline" style={{ border: '0.5px solid var(--border-hairline)' }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/chad-portrait.png" alt="Chad Jordan" className="w-full h-full object-cover" />
+            <img src="/about-chad.jpg" alt="Chad Jordan directing at the desk — storyboards, lenses, lamp glow"
+              className="w-full h-full object-cover" style={{ objectPosition: '38% 50%' }} />
           </div>
         </Reveal>
       </section>
