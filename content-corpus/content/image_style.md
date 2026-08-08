@@ -1,0 +1,1 @@
+Cinematic editorial photography. Deep navy and near-black tones with a single warm gold light accent. Low-key, dramatic, directional lighting; deep shadow. Matte finish, fine film grain, restrained and architectural composition with negative space. Muted, filmic, premium, intentional. No text, no logos, no people unless essential.
