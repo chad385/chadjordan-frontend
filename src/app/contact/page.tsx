@@ -1,62 +1,52 @@
 import type { Metadata } from 'next';
-
-const COMMUNITY_URL = 'https://www.skool.com/bravebrand/about';
+import LeadForm from '@/components/compound/LeadForm';
 
 export const metadata: Metadata = {
-  title: 'Contact — Digital Home Starter',
-  description: 'Your Contact page. Add your real contact paths.',
+  title: 'Contact — Chad Jordan · Studio',
+  description: 'Start with one decision. A 90-minute Strategic Session, and a one-page brief in your hands within 48 hours.',
 };
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen px-6 pt-32 pb-20 flex flex-col justify-center">
+    <main className="min-h-screen px-6 pt-40 pb-28">
       <div className="max-w-[900px] mx-auto w-full">
-        <p className="font-mono text-[0.65rem] uppercase tracking-[0.22em] text-white/40 mb-6">
-          Contact page
-        </p>
-
-        <h1 className="text-4xl md:text-6xl xl:text-7xl font-semibold tracking-[-0.065em] text-white leading-[0.95] mb-6">
-          This page needs
-          <br />
-          your contact paths.
+        <p className="label">Contact</p>
+        <h1 className="font-heading text-white mt-5 leading-[1.05] max-w-[18ch]"
+          style={{ fontSize: 'clamp(2.2rem, 5vw, 4rem)', fontWeight: 400 }}>
+          Start with one <em>decision.</em>
         </h1>
-
-        <p className="text-lg text-neutral-400 max-w-2xl leading-relaxed mb-14">
-          The Contact page works best when it removes ambiguity. Add the one or two paths
-          you actually want people to use, then remove anything that creates hesitation.
+        <p className="text-text-muted mt-6 max-w-[56ch] text-[1.05rem] leading-relaxed">
+          Ninety minutes. One decision. A one-page brief in your hands within 48 hours — credited toward whatever
+          comes next. Leave your details and I&rsquo;ll be in touch.
         </p>
 
-        <div className="grid gap-4 sm:grid-cols-3 mb-14">
-          {[
-            ['Email', 'Your main inbox for direct, low-friction conversations.'],
-            ['Booking', 'A Calendly, Cal.com, or scheduling link if calls are the conversion step.'],
-            ['Community', 'A newsletter, group, or community where the relationship continues.'],
-          ].map(([label, note]) => (
-            <div
-              key={label}
-              className="rounded-[1.25rem] border border-white/10 bg-white/[0.03] px-5 py-5"
-            >
-              <span className="inline-flex rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-[0.65rem] font-mono uppercase tracking-[0.12em] text-white/45 mb-4">
-                {label}
-              </span>
-              <p className="text-sm text-neutral-400 leading-relaxed">{note}</p>
-            </div>
-          ))}
+        <div className="mt-10">
+          <LeadForm source="contact" />
         </div>
 
-        <div className="border-t border-white/10 pt-8">
-          <p className="text-sm text-neutral-400 leading-relaxed">
-            Need help with your contact flow?{' '}
-            <a
-              href={COMMUNITY_URL}
-              target="_blank"
-              rel="noreferrer"
-              className="text-white/60 hover:text-white transition-colors"
-            >
-              Get guidance in the community &rarr;
-            </a>
-          </p>
+        <div className="grid gap-px mt-16 sm:grid-cols-2" style={{ background: 'var(--border-hairline)' }}>
+          <div className="p-6" style={{ background: 'var(--surface-page)' }}>
+            <span className="label !text-[0.6rem] text-text-accent">Direct</span>
+            <p className="text-text-muted mt-3 text-[0.95rem] leading-relaxed">
+              Prefer email? Reach me at{' '}
+              <a className="text-white hover:text-text-accent transition-colors" href="mailto:hello@chadjordan.studio">
+                hello@chadjordan.studio
+              </a>.
+            </p>
+          </div>
+          <div className="p-6" style={{ background: 'var(--surface-page)' }}>
+            <span className="label !text-[0.6rem] text-text-accent">Elsewhere</span>
+            <p className="text-text-muted mt-3 text-[0.95rem] leading-relaxed">
+              <a className="text-white hover:text-text-accent transition-colors" href="https://csgpro.app" target="_blank" rel="noreferrer">csgpro.app</a>
+              {' · '}
+              <a className="text-white hover:text-text-accent transition-colors" href="https://linkedin.com/in/chad-jordan-388ab624" target="_blank" rel="noreferrer">LinkedIn</a>
+            </p>
+          </div>
         </div>
+
+        <p className="label !tracking-[0.16em] !text-[0.6rem] text-white/45 mt-16">
+          You don&rsquo;t get a website. You get the deed.
+        </p>
       </div>
     </main>
   );

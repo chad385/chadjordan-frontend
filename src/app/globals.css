@@ -35,6 +35,10 @@
   --color-surface-page: var(--surface-page);
   --color-surface-card: var(--surface-card);
   --color-surface-elevated: var(--surface-elevated);
+  --color-text-primary: var(--text-primary);
+  --color-text-muted: var(--text-muted);
+  --color-text-accent: var(--text-accent);
+  --color-hairline: var(--border-hairline);
 
   /* Rebind Tailwind's built-in white/black to the neutral scale so every
      plain text-white / bg-black / border-white-with-opacity utility already
@@ -79,6 +83,54 @@ body {
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
   padding: 0;
+}
+
+/* ============================================================
+   Brand signatures — the four non-negotiables from the tokens
+   note, applied globally so components inherit them:
+   (a) sharp corners, (b) gold-italic pivot word, (c) DM Mono
+   uppercase labels, (d) gold 0.5px hairline rule. Flat/no shadow.
+   ============================================================ */
+
+/* (a) Sharp corners — the starter's components use Tailwind rounded-*
+   utilities; neutralise them so the whole system reads sharp. Genuinely
+   circular elements opt back in with .is-round. */
+[class*="rounded"]:not(.is-round) {
+  border-radius: 0 !important;
+}
+
+/* (b) The pivot word: any <em> inside a heading is set gold + italic. */
+h1 em, h2 em, h3 em, .pivot {
+  font-style: italic;
+  color: var(--text-accent);
+  font-weight: 500;
+}
+
+/* (c) DM Mono uppercase label — eyebrows, meta, tags. */
+.label {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+/* (d) The signature 0.5px gold hairline. */
+.hairline { border: none; border-top: 0.5px solid var(--border-hairline); }
+.hairline-b { border: none; border-bottom: 0.5px solid var(--border-hairline); }
+
+/* Divergence range control — gold thumb on a hairline track. */
+.dv-range { -webkit-appearance: none; appearance: none; height: 36px; background: transparent; outline: none; cursor: pointer; }
+.dv-range::-webkit-slider-runnable-track { height: 2px; background: var(--border-hairline); }
+.dv-range::-moz-range-track { height: 2px; background: var(--border-hairline); }
+.dv-range::-webkit-slider-thumb { -webkit-appearance: none; margin-top: -13px; width: 26px; height: 26px; border-radius: 50%; background: var(--brand-accent); cursor: pointer; }
+.dv-range::-moz-range-thumb { width: 26px; height: 26px; border: 0; border-radius: 50%; background: var(--brand-accent); cursor: pointer; }
+
+/* Reveal-on-scroll (matches the old site's .reveal → .visible). */
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
 }
 
 /* Article body fallback styles.

@@ -46,3 +46,6 @@ supabase/.temp/
 
 # content corpus (your brand IP — not part of the open-source code)
 content-corpus/
+
+# local design reference — never commit
+reference-old-site/

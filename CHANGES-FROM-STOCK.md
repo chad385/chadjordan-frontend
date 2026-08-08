@@ -96,3 +96,61 @@ were applied — the site still renders on a stock, generic theme (Inter font,
 black/white neutral palette, blue accent). Only the *mechanism* by which that
 theme is expressed changed, per the standing prompt: mechanism belongs in
 the template, brand values belong on an instance.
+
+---
+
+# INSTANCE LAYER — chadjordan.studio (the Compound)
+
+*Everything below is instance branding, NOT template. When merging upstream
+template updates, expect conflicts only in these files; keep the instance side.*
+
+## Brand tokens
+- **`design-system/tokens.json`** — replaced with the merged Compound tokens:
+  navy ground (`#0d1b2e`), warm bone text (`#ede8dc`), gold accent (`#c9a96e`);
+  Bricolage Grotesque / DM Sans / DM Mono; radius scale zeroed (sharp corners),
+  shadows `none` (flat). Template *structural* keys (`spacing`, `breakpoints`,
+  `animation`, full `borderRadius`/`shadows` key set) were PRESERVED — the raw
+  brand tokens omitted them and `tokens.ts` dereferences them, so a naive
+  replace would crash render. Added `colors.text`/`colors.border` blocks.
+
+## Theme pipeline
+- **`src/lib/theme/tokens.ts`** — `buildRootCssVariables()` now also emits
+  `--text-primary/muted/faint/accent` and `--border-hairline/accent-soft`
+  (guarded so the base template, which lacks `colors.text/border`, still builds).
+- **`src/app/globals.css`** — mapped the new text/hairline vars into `@theme`;
+  added the four brand signatures globally: sharp corners (neutralises Tailwind
+  `rounded-*` via `[class*="rounded"]:not(.is-round)`), gold-italic pivot (`em`
+  in headings + `.pivot`), DM Mono `.label`, gold `.hairline` rules; plus
+  `.reveal` scroll-in and the `.dv-range` slider (gold thumb).
+
+## New components (all instance brand)
+- **`src/components/compound/Divergence.tsx`** — the compounding-divergence
+  interactive, ported from the standalone oxide/Fraunces mockup to navy/gold.
+- **`src/components/compound/Reveal.tsx`** — scroll-reveal wrapper.
+- **`src/components/compound/LeadForm.tsx`** — real lead capture wired to the
+  stock `POST /api/leads` (the starter shipped no front-end form; wiring intact,
+  UI added). Honeypot `website` field.
+- **`src/components/layout/Footer.tsx`** — Compound footer.
+
+## Rebranded pages/components (were stock placeholders)
+- **`src/app/page.tsx`** — full Compound homepage (video hero, the argument +
+  divergence, gate/vault/press/grounds, selected work, three offers + lead form,
+  about + stats). Copy from `chadjordan-homepage-copy-compound.md`.
+- **`src/components/layout/NavBar.tsx`** — Compound nav (Work/Approach/Session/
+  Contact) + "Start with one decision" CTA.
+- **`src/app/layout.tsx`** — metadata + Footer mounted.
+- **`src/app/contact/page.tsx`** — rebuilt with the lead form + brand copy.
+
+## Public assets (instance)
+- `public/compound-hero.mp4`, `public/compound-hero-poster.jpg` (aerial dusk
+  hero), `public/work/*` (case images), `public/chad-portrait.png`.
+- `reference-old-site/` — read-only design reference, gitignored.
+
+## Integration preserved & verified
+- `POST /api/leads` end-to-end tested live (HTTP 201, row in Supabase, then
+  removed). All other API routes / data wiring untouched by the reskin.
+
+## Still stock (not yet rebranded — optional polish)
+- `src/app/about/page.tsx`, `src/app/services/page.tsx`, `src/app/blog/*` —
+  inherit the navy theme via tokens but retain template placeholder copy; not
+  linked from the nav. Blog will populate once the content pipeline runs.

@@ -1,12 +1,13 @@
 import type { Metadata } from 'next';
 import NavBar from '@/components/layout/NavBar';
+import Footer from '@/components/layout/Footer';
 import { getTokens, buildRootCssVariables, googleFontsHref } from '@/lib/theme/tokens';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Digital Home Starter',
+  title: 'Chad Jordan · Studio — Own the Compound',
   description:
-    'A polished open-source starter for an owned website, blog, and AI-ready content system.',
+    'A Compound is your whole business behind your own gates — brand, content, CRM, and infrastructure on ground you own, not rent. Built by hand. Made unmistakable.',
 };
 
 export default function RootLayout({
@@ -32,6 +33,7 @@ export default function RootLayout({
       <body className="antialiased">
         <NavBar />
         {children}
+        <Footer />
       </body>
     </html>
   );
