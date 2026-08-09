@@ -1,37 +1,20 @@
-# Case Studies
+# Proof — Chad Jordan Studio
 
-## Durindal — "Tactical Luxury" (DefenseTech GTM)
+**Credentials / stats:**
+- 2× Webby National Honoree
+- 20+ years creative direction
+- 26M Thrillist video views
+- $2B+ brand revenue scale
+- Senior creative lead at Inizio Evoke (top-10 global healthcare agency) + AI Trailblazers
+- A decade as a licensed real estate agent, overlapping — where the ownership conviction was learned
 
-**The Problem:**
-A DefenseTech venture needed a go-to-market identity that read as luxury, not hardware — a full brand *system*, not a logo.
+**Flagship case study:**
+- **Durindal** — a full "Tactical Luxury" brand *system* (DefenseTech GTM). The closest existing thing to a commissioned Compound.
 
-**What We Did:**
-Built the complete "Tactical Luxury" identity: positioning, visual language, cinematic brand world, and GTM direction. Directed end to end.
+**Brand/campaign lane (credibility, secondary to the Compound story):**
+- NASA × Ralph Lauren, G-Shock, Panerai, Porsche.
 
-**The Result:**
-The flagship case study and the closest existing thing to a commissioned Compound — a full brand system, unmistakable, owned by the client.
+**Origin story (the emotional why — tell as conviction, not complaint):**
+I built a product on a major cloud platform. It worked. Then the platform switched it off — twice — and the work was gone. No recourse, no ownership. I'd built on someone else's ground, and they were within their rights to erase it. I don't build that way now, and I don't let my clients either. That's what a Compound is: built so no one can switch it off but you.
 
----
-
-## NASA × Ralph Lauren Black Label — Artemis Collection (Spec Campaign)
-
-**The Problem:**
-Demonstrate campaign-grade creative direction at the intersection of fashion editorial and AI production.
-
-**What We Did:**
-Directed a 9-image spec campaign — Kennedy Space Center setting, Black Label fashion editorial — frame by frame.
-
-**The Result:**
-The credibility lane: proof that agency-quality campaign direction runs on the studio's system. (Secondary to the Compound story.)
-
----
-
-## The Credibility Lane (campaign & brand work)
-G-Shock DW5600 "New England Fisherman," Panerai Luminor Marina "Open Water," Porsche 928 "The Forgotten Grand Tourer," CSG PRO (the 7-Layer Visual Direction System). Directed, not generated — each a proof point that the eye is the product.
-
----
-
-## Compound №1 — Narrative Alchemists *(in build)*
-The first delivered client Compound. Lands here as the first true end-to-end case study once shipped — brand, content, and owned infrastructure, handed over with the deed.
-
-> Add the measurable outcomes and a client quote here once Narrative Alchemists ships.
+**First commissioned Compound:** Narrative Alchemists (Heather Appert) — in build. First delivered case study + testimonial lands here.

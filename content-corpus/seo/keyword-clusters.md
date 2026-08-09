@@ -1,44 +1,33 @@
-# SEO Keyword Clusters
+# SEO / Topics — Chad Jordan Studio
 
-Organized by topic cluster. The content strategy agent uses these to generate article topics. Volumes/difficulty are placeholders — validate with a real tool before committing a calendar.
+The content pillars and keyword clusters the trend-scan and content engine should target — so it writes about **this** world, not generic marketing.
 
-## Cluster: Own vs. Rent Your Business Online
-**Pillar keyword:** own your website vs rent
-**Intent:** informational → commercial
+**Pillar 1 — Digital ownership & platform risk**
+- owning vs renting your website / platform
+- platform lock-in, deplatforming, SaaS risk, "what happens when the platform shuts you off"
+- owning your CRM / email list / data
+- rent-vs-own economics for a business's digital presence
 
-| Keyword | Volume | Difficulty | Intent |
-|---------|--------|------------|--------|
-| own your website vs rent | est. | med | info |
-| stop renting your website | est. | low | comm |
-| what happens to my data if I leave Squarespace | est. | low | info |
-| do you own your GoHighLevel account | est. | low | comm |
-| platform risk for small business | est. | med | info |
+**Pillar 2 — Brand infrastructure for founders**
+- owned website + CRM + content stack
+- what a modern brand actually needs to run itself
+- moving off Squarespace / Wix / Framer / GoHighLevel and why
+- brand systems vs one-off sites
 
-## Cluster: The Owned Operating System
-**Pillar keyword:** owned business infrastructure
-**Intent:** informational → commercial
+**Pillar 3 — AI-powered content & creative production**
+- using AI to run a content engine without sounding generic
+- brand voice / brand intelligence for AI content
+- AI as amplifier of creative direction, not replacement
+- the AI-Trailblazers / agency-insider angle
 
-| Keyword | Volume | Difficulty | Intent |
-|---------|--------|------------|--------|
-| own your CRM and email list | est. | med | info |
-| self-hosted business stack | est. | high | info |
-| open source website you own | est. | med | comm |
-| website plus CRM plus content system | est. | low | comm |
+**Pillar 4 — Creative direction & unmistakable brands**
+- what makes a brand impossible to clone (taste, Visual DNA)
+- creative direction for founders who can't afford an agency
+- case-study thinking (DefenseTech, luxury brand systems)
 
-## Cluster: Creative Direction + AI
-**Pillar keyword:** AI creative direction
-**Intent:** informational → authority
+**Pillar 5 — The Compound model**
+- the owned-brand / "digital compound" thesis
+- sovereignty for creators and founders (as concept, not banner)
+- founding-client / studio-building narrative
 
-| Keyword | Volume | Difficulty | Intent |
-|---------|--------|------------|--------|
-| AI creative direction | est. | high | info |
-| directing not prompting | est. | low | info |
-| campaign quality AI production | est. | med | info |
-| brand system vs logo | est. | med | info |
-
----
-
-Build notes:
-1. Pillars map 1:1 to the three offers (see `positioning/offers.md`).
-2. Lead every "own vs rent" piece back to the Strategic Session CTA.
-3. Validate volume/difficulty in Ahrefs/SEMrush before locking the calendar.
+**Voice reminder:** every piece is written in the studio voice (see voice-guide), targets these pillars, and never uses the banned phrases.

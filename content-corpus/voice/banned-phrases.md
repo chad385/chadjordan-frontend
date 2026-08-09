@@ -1,30 +1,25 @@
-# Banned Phrases
+# Banned phrases — Chad Jordan Studio
 
-Words and phrases the AI must never use. These make content sound generic, corporate, or like every other AI output — and some directly contradict the brand's positioning.
+Never use these. They cheapen the brand or contradict the positioning.
 
-## Brand-Critical Bans (the "never say" list)
-These are not stylistic — they undercut the positioning. Never use them to describe the studio or its work.
-- **"fast"** — speed as a selling point belongs to the old model, not the Compound.
-- **"affordable"** / **"cheap"** — the studio competes on ownership and taste, never price.
-- **"template"** *(as a virtue)* — a Compound is commissioned, not skinned from a template. "Template" is the thing we're against; only use it to name what the client is escaping.
-- **"digital sovereignty"** *(as public-facing copy)* — it's the private conviction, not the sign on the door.
-- Hype/filler adjectives: **stunning, breathtaking, epic, game-changing, revolutionary, cutting-edge, world-class, best-in-class, next-level.**
+**Cheapening / wrong positioning:**
+- fast, affordable, cheap, budget-friendly
+- template (as a virtue), turnkey, plug-and-play
+- "get online quick," "websites made easy"
 
-## Always Banned (generic-AI tells)
-- "In today's fast-paced world"
-- "Game-changer" / "move the needle" / "take it to the next level"
-- "Leverage" (as a verb) / "utilize" / "synergy" / "circle back"
-- "Low-hanging fruit" / "at the end of the day" / "it goes without saying"
-- "Without further ado" / "in conclusion" / "dive deep" / "deep dive"
-- "Unlock your potential" / "revolutionize" / "seamless(ly)" / "robust" / "holistic"
+**Hype / filler adjectives:**
+- stunning, breathtaking, epic, game-changing, revolutionary, cutting-edge, next-level, world-class, seamless (as filler)
 
-## Use Instead
-| Banned | Replacement |
-|--------|-------------|
-| Fast / quick turnaround | *(reframe to ownership — don't sell speed)* |
-| Affordable / cost-effective | *(reframe to what it builds vs. what rent costs)* |
-| Template | Commissioned build / built by hand |
-| Leverage | Use |
-| Optimize | Improve / fix |
-| Scalable | Grows with you |
-| Solutions | *(name the actual thing)* |
+**Corporate throat-clearing:**
+- "In today's fast-paced digital landscape…"
+- "Now more than ever…"
+- "We're passionate about…"
+- "Take your brand to the next level"
+- "unlock," "supercharge," "elevate" (as empty verbs)
+
+**Positioning landmines:**
+- "digital sovereignty" as a public-facing banner (it's the private conviction, not the sign on the door)
+- naming the specific cloud platform in the origin story — say "a major cloud platform"
+- anything that frames the work as cheap, quick, or DIY
+
+**Tone rule:** no exclamation points, no begging for the click, no cheerleading. Earned conviction, not hype.

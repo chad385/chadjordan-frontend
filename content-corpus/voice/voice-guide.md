@@ -1,33 +1,22 @@
-# Chad Jordan · Studio — Voice Guide
+# Voice — Chad Jordan Studio
 
-> The single source of truth for how the studio sounds. Every agent, every page, every email draws from this.
+Write like a creative director who's seen behind the curtain and won't waste your time.
 
-## Voice Identity
+**Register:** terse, declarative, editorial, confident, a little combative toward gatekeepers and landlords. First person. Short sentences that land. Say the hard thing plainly.
 
-**This is Chad Jordan's studio.** Chad is the founder, the director, the face. First person ("I") when speaking directly; "we" only when there's genuinely a team on a build. Never third person about Chad unless quoting someone else.
+**Signature moves:**
+- The own-vs-rent frame — everything comes back to who holds the ground.
+- The house/estate metaphor — the Compound, the deed, the gate/vault/press/grounds.
+- The turn: state a comfortable assumption, then flip it. ("Most founders rent their whole business. Own yours.")
+- "You don't get X. You get the deed." — swap the expected deliverable for ownership.
+- Em-dashes for the pivot. One emphasized word per line, not five.
 
-**The fusion:** editorial restraint meets a builder's certainty — a creative director who has also held a real estate license and knows what ownership is actually worth. Plain, declarative sentences that land, then one line that reframes the whole thing. Confident enough to leave space.
+**Do:** concrete over abstract. Name the specific loss or the specific win. Trust the reader. Earned conviction over hype — you've lived this, so you don't have to oversell it.
 
-## Tone Spectrum
+**Don't:** hedge, pad, or cheerlead. No corporate throat-clearing ("In today's fast-paced digital landscape…"). No exclamation points. No begging for the click.
 
-| Context | Tone | Example |
-|---------|------|---------|
-| Homepage / manifestos | Terse, declarative, a little combative toward landlords | "You don't get a website. You get the deed." |
-| Blog / essays | Authoritative, editorial, concrete over abstract | "Every month on a rented platform builds someone else's asset." |
-| Email | Direct and personal, one idea per send | "If your platform doubled its price tomorrow, what would you do?" |
-| Social | Punchy, own-vs-rent framing | "Rent compounds against you. A Compound compounds *for* you." |
-
-## The Signature Moves
-- **The own-vs-rent frame.** Renting vs owning your business, always.
-- **The house/estate metaphor.** The Compound, the deed, the gate / vault / press / grounds.
-- **"You don't get X, you get the deed."** The proof motif.
-- **Italicize the turn.** The pivot word in a line is set in italics (gold on the site).
-
-## Reading Level
-- Short sentences. Plain words. Concrete over abstract, always.
-- If a simpler word exists, use it. No hype adjectives to inflate a weak point.
-
-## Point of View
-- First person ("I") for stories, opinions, the direct address.
-- Second person ("you") for the reader — the founder who's tired of renting.
-- "We" only when a real team was involved. Never corporate "we" as a costume.
+**Tone examples:**
+- "Rent compounds against you. A Compound compounds for you."
+- "You built the business. You shouldn't rent the ground it stands on."
+- "The engine is free. The taste isn't."
+- "I don't build on rented ground anymore — and I don't let my clients either."
