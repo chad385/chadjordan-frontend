@@ -186,6 +186,12 @@ template updates, expect conflicts only in these files; keep the instance side.*
 ## Journal (blog) surfaced
 - **`src/components/layout/NavBar.tsx`** + **`Footer.tsx`** — added a "Journal"
   link to `/blog` (nav + footer).
+- **`src/components/compound/JournalPreview.tsx`** (new) — async server component
+  that shows the latest 3 published articles as a "From the Journal" teaser
+  ("Point of view."); renders nothing until the Journal has content.
+- **`src/app/page.tsx`** — renders `<JournalPreview />` after About, and is now
+  `export const dynamic = 'force-dynamic'` so the teaser reflects new articles
+  without a redeploy.
 - **`.env.local`** — `NEXT_PUBLIC_BLOG_TITLE=Journal` (the page heading);
   `NEXT_PUBLIC_BLOG_LABEL` kept as "Point of View" (the eyebrow/tagline).
 - **`src/app/blog/page.tsx`** — metadata `<title>` now uses `BLOG_TITLE` (was

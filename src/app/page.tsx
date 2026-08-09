@@ -2,7 +2,12 @@ import Link from 'next/link';
 import Divergence from '@/components/compound/Divergence';
 import Reveal from '@/components/compound/Reveal';
 import LeadForm from '@/components/compound/LeadForm';
+import JournalPreview from '@/components/compound/JournalPreview';
 import { WORK_CARDS } from '@/lib/work';
+
+// Rendered per request so the "From the Journal" teaser reflects the latest
+// published articles without a redeploy.
+export const dynamic = 'force-dynamic';
 
 const ROOMS = [
   { k: 'The gate', v: 'A site built as a commissioned piece, not skinned from a template. It captures the lead instead of losing it.' },
@@ -215,6 +220,9 @@ export default function HomePage() {
           </div>
         </Reveal>
       </section>
+
+      {/* ── FROM THE JOURNAL (latest articles) ───────────────── */}
+      <JournalPreview />
     </main>
   );
 }
