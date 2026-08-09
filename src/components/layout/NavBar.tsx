@@ -5,6 +5,7 @@ import Link from 'next/link';
 
 const NAV_LINKS = [
   { href: '/#work', label: 'Work' },
+  { href: '/blog', label: 'Journal' },
   { href: '/#approach', label: 'Approach' },
   { href: '/#session', label: 'Session' },
   { href: '/contact', label: 'Contact' },

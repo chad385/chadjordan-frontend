@@ -13,7 +13,7 @@ const BLOG_DESCRIPTION =
   `Essays, guides, and practical notes from ${SITE_NAME}.`;
 
 export const metadata: Metadata = {
-  title: `${BLOG_LABEL} — ${SITE_NAME}`,
+  title: `${BLOG_TITLE} — ${SITE_NAME}`,
   description: BLOG_DESCRIPTION,
 };
 

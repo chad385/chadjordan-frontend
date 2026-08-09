@@ -183,7 +183,16 @@ template updates, expect conflicts only in these files; keep the instance side.*
   the backend injects into generated images.
 - All seeded into Supabase `brand_context` (the backend reads it at write time).
 
+## Journal (blog) surfaced
+- **`src/components/layout/NavBar.tsx`** + **`Footer.tsx`** — added a "Journal"
+  link to `/blog` (nav + footer).
+- **`.env.local`** — `NEXT_PUBLIC_BLOG_TITLE=Journal` (the page heading);
+  `NEXT_PUBLIC_BLOG_LABEL` kept as "Point of View" (the eyebrow/tagline).
+- **`src/app/blog/page.tsx`** — metadata `<title>` now uses `BLOG_TITLE` (was
+  `BLOG_LABEL`) so the browser tab matches the heading ("Journal").
+
 ## Still stock (not yet rebranded — optional polish)
-- `src/app/about/page.tsx`, `src/app/services/page.tsx`, `src/app/blog/*` —
-  inherit the navy theme via tokens but retain template placeholder copy; not
-  linked from the nav. Blog populates as the content pipeline publishes.
+- `src/app/about/page.tsx`, `src/app/services/page.tsx` — inherit the navy theme
+  via tokens but retain template placeholder copy; not linked from the nav.
+- `src/app/blog/*` — now linked as "Journal" and env-labeled, but the blog
+  layout itself is still the stock template structure (fine as-is).

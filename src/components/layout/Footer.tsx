@@ -32,6 +32,7 @@ export default function Footer() {
             You don&rsquo;t get a website. You get the deed.
           </p>
           <ul className="flex gap-6 text-[0.85rem] text-white/55">
+            <li><Link className="hover:text-white transition-colors" href="/blog">Journal</Link></li>
             <li><a className="hover:text-white transition-colors" href="https://csgpro.app" target="_blank" rel="noreferrer">csgpro.app</a></li>
             <li><a className="hover:text-white transition-colors" href="https://linkedin.com/in/chad-jordan-388ab624" target="_blank" rel="noreferrer">LinkedIn</a></li>
             <li><a className="hover:text-text-accent transition-colors" href={ADMIN_URL}>Admin</a></li>
