@@ -150,7 +150,40 @@ template updates, expect conflicts only in these files; keep the instance side.*
 - `POST /api/leads` end-to-end tested live (HTTP 201, row in Supabase, then
   removed). All other API routes / data wiring untouched by the reskin.
 
+## Case-study system (instance content)
+- **`src/lib/work.ts`** (new) — structured case content + homepage card data.
+- **`src/app/work/[slug]/page.tsx`** (new) — dynamic case template (hero, brief +
+  spec panel, process steps, gallery, "The Proof" insight, next-project chaining);
+  `generateStaticParams` over the case slugs.
+- **`src/app/page.tsx`** — Selected Work cards now link to `/work/[slug]`
+  (CSG PRO links out to csgpro.app).
+- `public/work/{nasa,durindal,gshock,panerai,porsche}/*` — case gallery images.
+
+## Homepage refinements
+- **`src/app/page.tsx`** — hero headline → "Own the house. / Hold the deed."
+  (two-line couplet, gold-italic payoff); About photo → `public/about-chad.jpg`
+  (desaturated −15% director shot).
+- `public/compound-hero.mp4` + `-poster.jpg` — swapped to the final dusk cut.
+
+## Footer Admin link
+- **`src/components/layout/Footer.tsx`** — env-driven "Admin" link
+  (`NEXT_PUBLIC_ADMIN_URL`). Set in `wrangler.jsonc` vars (prod backend URL) and
+  `.env.local` (localhost:3001 for dev). Baked at build via inline env override.
+
+## Production custom domain
+- **`wrangler.jsonc`** — `routes: [{ pattern: "chadjordan.studio", custom_domain: true }]`
+  plus `workers_dev: true` (kept alive; the backend references the workers.dev URL).
+  NOTE: adding `routes` without `workers_dev:true` disables the workers.dev URL.
+
+## Content corpus (instance voice — force-committed; content-corpus is gitignored)
+- `content-corpus/voice/{voice-guide,banned-phrases,vocabulary}.md`,
+  `positioning/core-positioning.md`, `proof/case-studies.md`,
+  `seo/keyword-clusters.md` — built from Chad's six authored voice files.
+- `content-corpus/content/{image_style,image_avoid}.md` — the image Visual DNA
+  the backend injects into generated images.
+- All seeded into Supabase `brand_context` (the backend reads it at write time).
+
 ## Still stock (not yet rebranded — optional polish)
 - `src/app/about/page.tsx`, `src/app/services/page.tsx`, `src/app/blog/*` —
   inherit the navy theme via tokens but retain template placeholder copy; not
-  linked from the nav. Blog will populate once the content pipeline runs.
+  linked from the nav. Blog populates as the content pipeline publishes.
