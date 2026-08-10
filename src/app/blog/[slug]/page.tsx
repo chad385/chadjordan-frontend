@@ -195,35 +195,6 @@ export default async function ArticlePage({
           </aside>
         </div>
       </section>
-
-      <section className="py-24 px-6 text-center border-t border-white/10">
-        <div className="max-w-3xl mx-auto">
-          <p className="font-mono text-[0.65rem] uppercase tracking-[0.22em] text-white/45 mb-6">
-            Keep shaping the starter
-          </p>
-          <h2 className="text-3xl md:text-5xl font-semibold tracking-[-0.05em] text-white mb-6">
-            Publish with the structure, then make it unmistakably yours.
-          </h2>
-          <p className="text-lg text-neutral-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-            This article layout is meant to be a premium baseline. Swap in your visuals, voice, and calls
-            to action once the starter becomes your real publishing system.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/blog"
-              className="inline-flex items-center justify-center rounded-full text-base font-medium bg-white text-black px-8 py-3.5 hover:bg-transparent hover:text-white border border-white transition-all"
-            >
-              View the journal
-            </Link>
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center rounded-full text-base font-medium bg-transparent text-white px-8 py-3.5 hover:bg-white hover:text-black border border-white/20 transition-all"
-            >
-              Customize the starter
-            </Link>
-          </div>
-        </div>
-      </section>
     </main>
   );
 }

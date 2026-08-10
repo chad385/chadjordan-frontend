@@ -200,5 +200,7 @@ template updates, expect conflicts only in these files; keep the instance side.*
 ## Still stock (not yet rebranded — optional polish)
 - `src/app/about/page.tsx`, `src/app/services/page.tsx` — inherit the navy theme
   via tokens but retain template placeholder copy; not linked from the nav.
-- `src/app/blog/*` — now linked as "Journal" and env-labeled, but the blog
-  layout itself is still the stock template structure (fine as-is).
+- `src/app/blog/*` — now linked as "Journal" and env-labeled; the blog layout
+  is otherwise the stock template structure (fine as-is). Removed the stock
+  "Keep shaping the starter / Customize the starter" placeholder CTA from the
+  bottom of `blog/[slug]/page.tsx` — articles now close into the real footer.
