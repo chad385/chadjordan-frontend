@@ -4,10 +4,16 @@ import Footer from '@/components/layout/Footer';
 import { getTokens, buildRootCssVariables, googleFontsHref } from '@/lib/theme/tokens';
 import './globals.css';
 
+const TITLE = 'Chad Jordan · Studio — Brand work for firms that look smaller than they are';
+const DESCRIPTION =
+  'Brand work for expert-led firms whose presentation doesn\u2019t match who they are. Twenty years directing brand for companies with budgets, applied to closing the gap between what you\u2019ve done and what a stranger concludes in ninety seconds.';
+
 export const metadata: Metadata = {
-  title: 'Chad Jordan · Studio — Own the Compound',
-  description:
-    'A Compound is your whole business behind your own gates — brand, content, CRM, and infrastructure on ground you own, not rent. Built by hand. Made unmistakable.',
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://chadjordan.studio'),
+  title: TITLE,
+  description: DESCRIPTION,
+  openGraph: { title: TITLE, description: DESCRIPTION, siteName: 'Chad Jordan · Studio', type: 'website' },
+  twitter: { card: 'summary', title: TITLE, description: DESCRIPTION },
 };
 
 export default function RootLayout({

@@ -6,7 +6,7 @@ import { getSiteUrl } from "@/lib/site-url";
 
 export async function GET() {
   const SITE_URL = await getSiteUrl();
-  const body = `# Digital Home
+  const body = `# Chad Jordan · Studio
 # ${SITE_URL}
 
 User-agent: *

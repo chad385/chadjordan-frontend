@@ -28,13 +28,17 @@ export function generateLlmsTxt(
   // Header — customize this with your brand description
   lines.push(`# ${SITE_NAME}`);
   lines.push("");
-  lines.push("> [Your one-line brand description. Update this in src/lib/schema/llms-txt.ts]");
+  lines.push("> Brand work for expert-led firms whose presentation doesn't match who they are.");
   lines.push("");
 
   // About — customize with your brand story
   lines.push("## About");
   lines.push("");
-  lines.push(`${SITE_NAME} [describe what you do and who you help]. Update this section in src/lib/schema/llms-txt.ts.`);
+  lines.push(`${SITE_NAME} is the studio of Chad Jordan, a creative director and brand strategist with twenty years directing brand for companies with budgets (2× Webby National Honoree, $2B+ brand revenue scale; senior creative lead at Inizio Evoke). The studio closes the gap between what a firm has actually done and what a stranger concludes in ninety seconds: finding the dissonance, digging for what's true, cutting until only that's left, and building identity, image world, site, and system around it.`);
+  lines.push("");
+  lines.push("Ways to work together: The Strategic Session ($1,500, ninety minutes, a one-page brief within 48 hours, credited toward what comes next); The Commission (the full build, by commission); The Standing Engagement (monthly).");
+  lines.push("");
+  lines.push(`Proof: Durindal (Tactical Luxury, full brand system) — ${SITE_URL}/work/durindal`);
   lines.push("");
 
   // Key entities (dynamic from database)

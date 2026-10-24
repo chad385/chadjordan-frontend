@@ -11,8 +11,18 @@ function readingTime(body: string | null) {
   return Math.max(1, Math.round(words / 220));
 }
 
-/** Latest 3 published articles, shown as a teaser on the homepage. Renders
- *  nothing until the Journal has content, so the section never sits empty. */
+// Posts from the old own-vs-rent positioning. They stay live at their URLs but
+// never surface on the homepage. New on-thesis posts fill the rail on their own.
+const OFF_THESIS_SLUGS = [
+  'platform-risk-audit-squarespace-framer-gohighlevel-founders',
+  'brand-stack-platform-risk-audit',
+  'website-ownership-source-code-competitive-moat',
+  'deplatforming-business-risk-founders-guide',
+  'saas-pricing-surge-small-business-brand-stack',
+];
+
+/** Latest (up to 3) on-thesis published articles, shown as a teaser on the
+ *  homepage. Renders nothing until there's content, so it never sits empty. */
 export default async function JournalPreview() {
   let articles: Array<{ slug: string; title: string; excerpt: string | null; published_at: string | null; featured_image_url: string | null; body: string | null }> = [];
   try {
@@ -22,6 +32,7 @@ export default async function JournalPreview() {
       .select('slug, title, excerpt, published_at, featured_image_url, body')
       .eq('status', 'published')
       .in('content_type', ['article', 'guide'])
+      .not('slug', 'in', `(${OFF_THESIS_SLUGS.join(',')})`)
       .order('published_at', { ascending: false, nullsFirst: false })
       .limit(3);
     articles = data || [];
@@ -36,7 +47,7 @@ export default async function JournalPreview() {
       <div className="max-w-[1200px] mx-auto">
         <div className="flex items-end justify-between gap-4">
           <div>
-            <p className="label">From the Journal</p>
+            <p className="label">From the journal</p>
             <h2 className="font-heading text-white mt-4" style={{ fontSize: 'clamp(1.9rem, 4.5vw, 3rem)', fontWeight: 400 }}>
               Point of <em>view.</em>
             </h2>
@@ -46,7 +57,7 @@ export default async function JournalPreview() {
           </Link>
         </div>
 
-        <div className="grid gap-5 mt-10 sm:grid-cols-2 lg:grid-cols-3">
+        <div className={`grid gap-5 mt-10 sm:grid-cols-2 ${articles.length >= 3 ? 'lg:grid-cols-3' : ''}`}>
           {articles.map((a) => (
             <Link
               key={a.slug}

@@ -5,9 +5,8 @@ import Link from 'next/link';
 
 const NAV_LINKS = [
   { href: '/#work', label: 'Work' },
+  { href: '/#method', label: 'Method' },
   { href: '/blog', label: 'Journal' },
-  { href: '/#approach', label: 'Approach' },
-  { href: '/#session', label: 'Session' },
   { href: '/contact', label: 'Contact' },
 ];
 
@@ -46,10 +45,10 @@ export default function NavBar() {
             </Link>
           ))}
           <Link
-            href="/#session"
-            className="label !text-[0.62rem] border border-[color:var(--border-accent-soft)] text-text-accent px-4 py-2.5 hover:bg-[color:var(--brand-accent)] hover:text-[color:var(--surface-page)] transition-colors"
+            href="/contact"
+            className="label !text-[0.62rem] border border-[color:var(--border-accent-soft)] !text-text-accent px-4 py-2.5 hover:bg-[color:var(--brand-accent)] hover:!text-[color:var(--surface-page)] transition-colors"
           >
-            Start with one decision →
+            Start a conversation →
           </Link>
         </div>
 

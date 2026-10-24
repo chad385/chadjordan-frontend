@@ -70,7 +70,7 @@ export default function LeadForm({ source = 'home' }: { source?: string }) {
         className="label !text-[0.62rem] whitespace-nowrap px-5 py-3 transition-colors disabled:opacity-60"
         style={{ background: 'var(--brand-accent)', color: 'var(--surface-page)' }}
       >
-        {status === 'sending' ? 'Sending…' : 'Start with one decision →'}
+        {status === 'sending' ? 'Sending…' : 'Start a conversation →'}
       </button>
       {status === 'error' && (
         <span className="text-[color:var(--color-error)] text-sm sm:hidden">{error}</span>

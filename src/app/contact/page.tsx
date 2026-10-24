@@ -3,7 +3,7 @@ import LeadForm from '@/components/compound/LeadForm';
 
 export const metadata: Metadata = {
   title: 'Contact — Chad Jordan · Studio',
-  description: 'Start with one decision. A 90-minute Strategic Session, and a one-page brief in your hands within 48 hours.',
+  description: 'Start a conversation. A 90-minute Strategic Session, and a one-page brief in your hands within 48 hours.',
 };
 
 export default function ContactPage() {
@@ -13,7 +13,7 @@ export default function ContactPage() {
         <p className="label">Contact</p>
         <h1 className="font-heading text-white mt-5 leading-[1.05] max-w-[18ch]"
           style={{ fontSize: 'clamp(2.2rem, 5vw, 4rem)', fontWeight: 400 }}>
-          Start with one <em>decision.</em>
+          Start a <em>conversation.</em>
         </h1>
         <p className="text-text-muted mt-6 max-w-[56ch] text-[1.05rem] leading-relaxed">
           Ninety minutes. One decision. A one-page brief in your hands within 48 hours — credited toward whatever
@@ -43,10 +43,6 @@ export default function ContactPage() {
             </p>
           </div>
         </div>
-
-        <p className="label !tracking-[0.16em] !text-[0.6rem] text-white/45 mt-16">
-          You don&rsquo;t get a website. You get the deed.
-        </p>
       </div>
     </main>
   );

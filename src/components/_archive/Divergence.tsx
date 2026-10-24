@@ -1,5 +1,8 @@
 'use client';
 
+// ARCHIVED 2026-10-24 — removed from the homepage in the positioning rebuild
+// (see CHANGES.md). Not imported anywhere. Needs ./divergence.css if reused.
+
 import { useEffect, useRef } from 'react';
 
 /**

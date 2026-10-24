@@ -6,6 +6,7 @@
 import { MetadataRoute } from "next";
 import { createAdminClient } from "@/lib/supabase/server";
 import { getSiteUrl } from "@/lib/site-url";
+import { CASE_SLUGS } from "@/lib/work";
 
 // Force dynamic — Supabase needs env vars not available at build time
 export const dynamic = "force-dynamic";
@@ -36,24 +37,20 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.9,
     },
     {
-      url: `${SITE_URL}/services`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${SITE_URL}/about`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
       url: `${SITE_URL}/contact`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.6,
     },
   ];
+
+  // Case studies (the old /about and /services placeholders now redirect home)
+  const casePages: MetadataRoute.Sitemap = CASE_SLUGS.map((slug) => ({
+    url: `${SITE_URL}/work/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: slug === "durindal" ? 0.9 : 0.7,
+  }));
 
   // Dynamic content pages
   const contentPages: MetadataRoute.Sitemap = (content || []).map((item) => ({
@@ -63,5 +60,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: item.content_type === "case_study" ? 0.8 : 0.7,
   }));
 
-  return [...staticPages, ...contentPages];
+  return [...staticPages, ...casePages, ...contentPages];
 }

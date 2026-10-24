@@ -12,9 +12,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const c = CASES[slug];
   if (!c) return { title: 'Work — Chad Jordan · Studio' };
+  const title = `${c.titleLead} ${c.titlePivot} — Chad Jordan · Studio`;
+  const description = c.briefBody[0];
   return {
-    title: `${c.titleLead} ${c.titlePivot} — Chad Jordan · Studio`,
-    description: c.briefBody[0],
+    title,
+    description,
+    openGraph: { title, description, images: [c.heroImg] },
+    twitter: { card: 'summary_large_image', title, description, images: [c.heroImg] },
   };
 }
 

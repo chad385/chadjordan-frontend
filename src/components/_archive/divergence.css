@@ -1,0 +1,10 @@
+/* Archived with Divergence.tsx (2026-10-24). Moved out of globals.css when the
+   rent-vs-own section left the homepage. Import this alongside the component
+   if it's ever reused. */
+
+/* Divergence range control — gold thumb on a hairline track. */
+.dv-range { -webkit-appearance: none; appearance: none; height: 36px; background: transparent; outline: none; cursor: pointer; }
+.dv-range::-webkit-slider-runnable-track { height: 2px; background: var(--border-hairline); }
+.dv-range::-moz-range-track { height: 2px; background: var(--border-hairline); }
+.dv-range::-webkit-slider-thumb { -webkit-appearance: none; margin-top: -13px; width: 26px; height: 26px; border-radius: 50%; background: var(--brand-accent); cursor: pointer; }
+.dv-range::-moz-range-thumb { width: 26px; height: 26px; border: 0; border-radius: 50%; background: var(--brand-accent); cursor: pointer; }

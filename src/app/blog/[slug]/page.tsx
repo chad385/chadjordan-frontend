@@ -42,11 +42,14 @@ export async function generateMetadata({
     ? getOptimizedImageUrl(seo.og_image_url, 1200, 75)
     : undefined;
 
+  const title = seo?.title || data.title;
+  const description = seo?.description || data.excerpt || '';
+  // Set share tags per article so it never inherits the homepage's.
   return {
-    title: seo?.title || data.title,
-    description: seo?.description || data.excerpt || '',
-    openGraph: socialImage ? { images: [socialImage] } : undefined,
-    twitter: socialImage ? { images: [socialImage] } : undefined,
+    title,
+    description,
+    openGraph: { type: 'article', title, description, ...(socialImage ? { images: [socialImage] } : {}) },
+    twitter: { card: socialImage ? 'summary_large_image' : 'summary', title, description, ...(socialImage ? { images: [socialImage] } : {}) },
   };
 }
 
