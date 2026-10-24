@@ -1,0 +1,3 @@
+- Composition: one person in profile at a table or desk, absorbed and eyes down, framed from the waist up and close enough to read clearly; a single desk lamp is the only warm light and the room behind falls to cold navy shadow.
+- Composition: a close trace of human presence with no person in frame: a used desk, a cup, worn papers face down, a lamp left on; shot tight at table height with shallow depth of field.
+- Composition: a modest, real room or doorway at night seen from a few steps back; one small warm light source and everything else in cold navy; if a figure is present they are clearly readable in the frame, never a tiny silhouette.
