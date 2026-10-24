@@ -21,12 +21,14 @@ Never use these. They cheapen the brand, read as machine-written, or argue a pos
 
 **Retired positioning (the old Compound / ownership argument):**
 - "own the house," "hold the deed," "your own gates," "stop renting," "rented ground"
-- the Compound, Digital Compound, "compounds for you"
+- the Compound, Digital Compound, "compounds for you"; the verb "compound" / "compounding" in any sense ("the costs compound")
 - "digital sovereignty" in any public copy
 - platform risk, deplatforming, or website ownership as the subject or argument of a piece
 
 **Constructions:**
 - The X-not-Y sentence as a default move ("Most brands aren't broken, they're buried." / "They don't impose a sound, they excavate yours."). It reads as AI-written. Allowed once per piece at most, never twice.
 - A quotable one-liner at the end of every paragraph.
+- Three-beat fragment closers: "Nothing inflated. Nothing borrowed. Just the gap closed."
+- The symptom / disease metaphor.
 
 **Tone rule:** no exclamation points, no begging for the click, no cheerleading. Earned conviction, not hype.

@@ -335,3 +335,36 @@ old thesis.
 - **Published posts**: untouched. The five own-vs-rent posts stay live at their
   URLs and are excluded from the homepage rail. Article pages have no
   related-posts section, so nothing else surfaces them.
+
+## Corpus pass 2 + verification (2026-10-24)
+
+**Test 1** (engine blog draft "Why Good Firms Lose Pitches…", one-off social
+post): no ownership/Compound argument anywhere. Failed on X-not-Y (~10 in the
+blog, 3 in the post), used "compound" as a verb twice, and misstated Durindal
+("a thesis about tactical luxury", "an identity system they called Tactical
+Luxury").
+
+Partly the corpus's own fault: pass 1 defined its core ideas as contrasts
+("correction, not inflation", "nothing invented", "excavation vs. invention"),
+which the model copied. **Pass 2:** rewrote those as plain statements; made
+X-not-Y the top voice rule with concrete before/after rewrites and a
+count-before-finishing check; banned "compound" in any sense, three-beat
+closers, symptom/disease; pinned Durindal's facts (Tactical Luxury is the
+studio's name for the system; exactly four deliverables); kept the footer
+tagline out of articles.
+
+**Test 2** (engine blog draft "What a Brand Brain Is…", second post): X-not-Y
+down only slightly (~8 in the blog, 2 in the post). The blog also ignored the
+pinned Durindal facts ("the brand brain was the first deliverable"). Conclusion:
+the corpus is now clean; what's left comes from the article writer's hardcoded
+prompt (provocative hook + "the reframe" step, 2,000-word minimum, "anchor in the
+signature story") and needs an engine change, not more corpus.
+
+**Also found:** the writer appends one of five hardcoded "compositions" to every
+image prompt ("monumental subject dwarfing the frame, god rays", "surreal
+landscape", "colossal space… cathedral of the idea") that contradict the image
+doctrine. And on the live Worker, hero-image generation failed silently on both
+test drafts (local OpenAI key and both image models check out).
+
+**Test artifacts:** two drafts (unpublished) and their two calendar entries,
+notes marked "TEST 2026-10-24".

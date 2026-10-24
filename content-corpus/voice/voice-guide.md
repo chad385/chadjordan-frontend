@@ -8,7 +8,13 @@ Write like a creative director who has spent twenty years inside big-brand work 
 
 **One turn of phrase per section.** Say the thing flatly and let a single line carry the weight. If a section has two lines that sound like slogans, cut one.
 
-**Avoid the X-not-Y reflex.** "It isn't A, it's B" and "They don't do A, they do B" are allowed once per piece at most. Usually the better sentence just states B.
+**Avoid the X-not-Y reflex. This is the most important rule in this guide.** Any sentence or pair of sentences that sets up a thing only to deny it counts: "It isn't A, it's B." / "The fix isn't A. It's B." / "Not because A. Because B." / "A is not B — it's C." / "The question isn't A; the question is B." / "requires B, not A." Allowed once per piece at most. State B directly instead:
+- Instead of "The fix isn't a better logo. The fix is finding what's true." → "The fix starts with finding what's true about the firm."
+- Instead of "Presentation is not decoration — it's the argument." → "Presentation is the first argument a firm makes."
+- Instead of "This is not a cynical observation. It's how people decide." → "This is how people decide."
+Before finishing, reread the draft and count these. If there is more than one, rewrite the extras as plain statements.
+
+**No stock closers.** Don't end a section on a three-beat fragment ("Nothing inflated. Nothing borrowed. Just the gap closed.") or a symptom/disease metaphor. End on the last useful sentence.
 
 **Do:**
 - Concrete over abstract. Name the specific loss or the specific win: the pitch that went to a worse firm, the discount given to compensate, the ninety seconds a stranger spends on the site.
