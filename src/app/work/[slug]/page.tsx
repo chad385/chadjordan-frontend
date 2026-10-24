@@ -123,6 +123,12 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
           <p className="font-heading text-white mt-6 leading-[1.3]" style={{ fontSize: 'clamp(1.4rem, 3vw, 2.2rem)', fontWeight: 400 }}>
             “{c.insight}”
           </p>
+          {c.postscript && (
+            <p className="text-text-muted mt-10 pt-8 max-w-[52ch] mx-auto text-[1rem] leading-relaxed"
+              style={{ borderTop: '0.5px solid var(--border-hairline)' }}>
+              {c.postscript}
+            </p>
+          )}
         </Reveal>
       </section>
 

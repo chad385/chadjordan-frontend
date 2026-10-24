@@ -20,6 +20,7 @@ export type Case = {
   steps: Step[];
   gallery: GalleryBlock[];
   insight: string;
+  postscript?: string;    // optional closing note after the insight (e.g. what happened since)
   next: string;           // slug of next case
 };
 
@@ -146,17 +147,17 @@ export const CASES: Record<string, Case> = {
     category: 'System',
     titleLead: 'Durindal',
     titlePivot: 'Tactical Luxury',
-    subtitle: 'DefenseTech GTM · Full Brand System · Cinematic Identity · 2024',
+    subtitle: 'Engagement 2024 · DefenseTech GTM · Full Brand System · Cinematic Identity',
     heroImg: `${P}/durindal/dur_hero.png`,
     briefLead: 'Where defense meets',
     briefPivot: 'precision luxury.',
     briefBody: [
-      'Durindal is a DefenseTech go-to-market firm. The brief began as a website. It expanded into something larger: a complete brand world that had to operate in both the boardroom and the field without blinking.',
+      'In 2024, when this engagement ran, Durindal was a DefenseTech go-to-market firm. The brief began as a website. It expanded into something larger: a complete brand world that had to operate in both the boardroom and the field without blinking.',
       'Tactical Luxury became the brand system — identity, cinematic founder imagery, moodboards, site redesign, and a strategic decision-filter framework. Everything built to communicate that this is a firm where precision is non-negotiable and the aesthetic matches the capability.',
     ],
     meta: [
       { label: 'Project Type', value: 'Full Brand System' },
-      { label: 'Client', value: 'Durindal — DefenseTech GTM' },
+      { label: 'Client', value: 'Durindal — DefenseTech GTM (at the time of the engagement)' },
       { label: 'Positioning', value: 'Tactical Luxury' },
       { label: 'Deliverables', value: 'Identity · Imagery · Site · Brand Framework' },
       { label: 'Tools', value: 'Gemini Flash · Midjourney · CSG PRO' },
@@ -175,6 +176,7 @@ export const CASES: Record<string, Case> = {
       { images: [`${P}/durindal/dur_carabiner.png`, `${P}/durindal/dur_duffel.png`], caption: 'Brand Extensions — Identity as object / Product in world', num: '06–07 / 07' },
     ],
     insight: 'The brief was a website. The output was a complete brand world — identity, imagery, collateral, and a decision filter the founders still use today.',
+    postscript: 'Durindal has since evolved into a product company. The identity carried through the transition.',
     next: 'porsche',
   },
 
@@ -217,7 +219,7 @@ export const CASE_SLUGS = Object.keys(CASES);
 export type WorkCard = { img: string; title: string; sub: string; tag: string; href: string; external?: boolean };
 export const WORK_CARDS: WorkCard[] = [
   { img: '/work/nasa.png', title: 'NASA × Ralph Lauren', sub: 'Artemis Collection · Kennedy Space Center', tag: 'Spec', href: '/work/nasa' },
-  { img: '/work/durindal.png', title: 'Durindal', sub: 'Tactical Luxury · DefenseTech GTM · Full Identity', tag: 'System', href: '/work/durindal' },
+  { img: '/work/durindal.png', title: 'Durindal', sub: 'Tactical Luxury · Full Identity · 2024', tag: 'System', href: '/work/durindal' },
   { img: '/work/gshock.png', title: 'G-Shock DW5600', sub: 'New England Fisherman · 5-Shot Series', tag: 'Spec', href: '/work/gshock' },
   { img: '/work/panerai.png', title: 'Panerai Luminor Marina', sub: 'Open Water · Lifestyle Campaign', tag: 'Spec', href: '/work/panerai' },
   { img: '/work/porsche.png', title: 'Porsche 928', sub: 'The Forgotten Grand Tourer · Mood Direction', tag: 'Exploration', href: '/work/porsche' },
