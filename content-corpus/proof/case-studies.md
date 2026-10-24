@@ -5,16 +5,15 @@
 - 20+ years creative direction
 - 26M Thrillist video views
 - $2B+ brand revenue scale
-- Senior creative lead at Inizio Evoke (top-10 global healthcare agency) + AI Trailblazers
-- A decade as a licensed real estate agent, overlapping — where the ownership conviction was learned
+- Senior creative lead at Inizio Evoke (top-10 global healthcare agency), member of its AI Trailblazers group
+- A decade with a real estate license, overlapping the creative career — taught how deals actually close and what people are afraid of right before they commit money
 
-**Flagship case study:**
-- **Durindal** — a full "Tactical Luxury" brand *system* (DefenseTech GTM). The closest existing thing to a commissioned Compound.
+**Lead case study — Durindal (Tactical Luxury)**
+- **The situation:** Durindal was Garrath and Sebastian — two founders and a thesis, with no product yet. They were selling judgment to people who wire eight figures, and their presentation said they were new. They came in needing a website.
+- **The work:** Tactical Luxury — a complete identity, an image world, a site, and a decision filter for the founders.
+- **The outcome:** by the time the work was finished, Durindal looked like a firm with a history. The team still uses the decision filter daily to judge whether a piece of creative, messaging, or positioning is on-brand.
+- **What it shows:** the brief was a website; the real problem was the gap between a serious firm and a presentation that read as brand new. The fix was a correction, built from what was already true about the founders.
+- Client quotes: see proof/testimonials. Full case study: /work/durindal.
 
-**Brand/campaign lane (credibility, secondary to the Compound story):**
-- NASA × Ralph Lauren, G-Shock, Panerai, Porsche.
-
-**Origin story (the emotional why — tell as conviction, not complaint):**
-I built a product on a major cloud platform. It worked. Then the platform switched it off — twice — and the work was gone. No recourse, no ownership. I'd built on someone else's ground, and they were within their rights to erase it. I don't build that way now, and I don't let my clients either. That's what a Compound is: built so no one can switch it off but you.
-
-**First commissioned Compound:** Narrative Alchemists (Heather Appert) — in build. First delivered case study + testimonial lands here.
+**Brand and campaign work (credibility for the twenty years, not client claims):**
+- NASA × Ralph Lauren (spec campaign), G-Shock (spec), Panerai (spec), Porsche 928 (personal exploration). Always describe these as spec or personal work. Never imply these brands were clients.

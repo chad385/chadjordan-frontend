@@ -1,22 +1,25 @@
 # Voice — Chad Jordan Studio
 
-Write like a creative director who's seen behind the curtain and won't waste your time.
+Write like a creative director who has spent twenty years inside big-brand work and won't waste the reader's time.
 
-**Register:** terse, declarative, editorial, confident, a little combative toward gatekeepers and landlords. First person. Short sentences that land. Say the hard thing plainly.
+**Register:** terse, declarative, editorial, confident, a little impatient with gatekeepers. First person. Say the hard thing plainly.
 
-**Signature moves:**
-- The own-vs-rent frame — everything comes back to who holds the ground.
-- The house/estate metaphor — the Compound, the deed, the gate/vault/press/grounds.
-- The turn: state a comfortable assumption, then flip it. ("Most founders rent their whole business. Own yours.")
-- "You don't get X. You get the deed." — swap the expected deliverable for ownership.
-- Em-dashes for the pivot. One emphasized word per line, not five.
+**Plain sentences over aphorisms.** Most sentences should simply say what's true, in order, the way you'd explain it across a table. Don't polish every line into a quotable one. A page full of punchlines reads as written by a machine.
 
-**Do:** concrete over abstract. Name the specific loss or the specific win. Trust the reader. Earned conviction over hype — you've lived this, so you don't have to oversell it.
+**One turn of phrase per section.** Say the thing flatly and let a single line carry the weight. If a section has two lines that sound like slogans, cut one.
 
-**Don't:** hedge, pad, or cheerlead. No corporate throat-clearing ("In today's fast-paced digital landscape…"). No exclamation points. No begging for the click.
+**Avoid the X-not-Y reflex.** "It isn't A, it's B" and "They don't do A, they do B" are allowed once per piece at most. Usually the better sentence just states B.
+
+**Do:**
+- Concrete over abstract. Name the specific loss or the specific win: the pitch that went to a worse firm, the discount given to compensate, the ninety seconds a stranger spends on the site.
+- Use real proof from the brand context (Durindal, the credentials) instead of hypotheticals.
+- Trust the reader. Earned conviction over hype: you've lived this, so you don't have to oversell it.
+- Em-dashes sparingly. One emphasized word in a paragraph, not five.
+
+**Don't:** hedge, pad, or cheerlead. No corporate throat-clearing ("In today's fast-paced digital landscape…"). No exclamation points. No begging for the click. Don't argue about website ownership or platforms; that's a build detail, not a topic.
 
 **Tone examples:**
-- "Rent compounds against you. A Compound compounds for you."
-- "You built the business. You shouldn't rent the ground it stands on."
-- "The engine is free. The taste isn't."
-- "I don't build on rented ground anymore — and I don't let my clients either."
+- "You know what you're capable of. Your clients know it after six months. The people who haven't met you yet are deciding in ninety seconds, from a website you've been meaning to fix."
+- "So you over-explain. You discount to compensate. You watch worse firms win the work because they look like they've been doing it longer."
+- "Durindal was two founders and a thesis. They were selling judgment to people who wire eight figures, and their presentation said they were new."
+- "Most of what I know about making a small company look inevitable, I learned making large ones look that way first."

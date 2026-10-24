@@ -1,17 +1,17 @@
 # Vocabulary — Chad Jordan Studio
 
-Use these terms consistently — they're the brand's world.
+Terms the brand uses consistently. Use them where they fit; don't force them into every piece.
 
-- **The Compound / Digital Compound** — the owned brand + content + infrastructure system. Always capitalized.
-- **The deed** — proof of ownership. "You don't get a website. You get the deed."
-- **Own vs rent** — the core frame. Rent = platforms you don't control. Own = your Compound.
-- **"Compounds against you / for you"** — rent works against you over time; a Compound works for you.
-- **Unfair Advantage** — creative firepower that shouldn't be gated behind agency budgets.
-- **The gate** — the public site, a commissioned front door that captures instead of loses.
-- **The vault** — the CRM and list; a system nobody can price-gouge or repossess.
-- **The press** — the content engine; campaign-grade content on a schedule.
-- **The grounds** — the automation that keeps the place running.
-- **Visual DNA** — the reusable creative grade that keeps a brand's imagery coherent.
-- **The Strategic Session / The Standing Engagement** — the offers (see positioning).
+- **The gap** — the distance between what a firm is and how it reads to a stranger. The core problem the studio solves.
+- **The dissonance** — the specific places where what a firm says and what it is stop matching. Usually found in borrowed language.
+- **The ninety seconds** — how long a stranger takes to decide about a firm from its site, deck, or profile.
+- **Correction** — what the work is. The brand is brought up to match the firm. Never "elevate," never "inflate."
+- **Excavation** — the method. Everything comes from what's already true about the firm; nothing is invented.
+- **Addition by subtraction** — most of the work is cutting: borrowed language, extra claims, anything that isn't true to the firm.
+- **The brand brain** — the written source of truth: voice, positioning, proof, and the words the firm will never say. Every other asset is built from it. Almost nobody has one.
+- **Image world** — a visual DNA locked once, then applied to every image after, so imagery stays on brand at close to no cost.
+- **Built to be lived in** — the brand is something the team uses daily (Durindal still runs decisions through its filter), not a file that sits in a folder.
+- **Expert-led firm** — the client: a firm that sells judgment and expertise, usually founder- or partner-led.
+- **The offers** — The Strategic Session, The Commission, The Standing Engagement (see positioning/offers).
 
-**Internal only (don't publish):** "glass house" (north-star), "digital sovereignty" (the private conviction — never a public-facing banner).
+**Retired — never use in published copy:** the Compound / Digital Compound, the deed, own vs. rent, "compounds for you / against you," the gate, the vault, the press, the grounds, "rented ground," digital sovereignty.

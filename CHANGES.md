@@ -285,3 +285,53 @@ surface (`#152338`), so the two back-to-back text sections don't flatten.
 - Content engine pass (brand_context + `content-corpus/`) after Stage 4.
   The 9 queued own-vs-rent topics in `content_calendar` are on hold — do not
   approve.
+
+---
+
+# Content corpus update (2026-10-24)
+
+Brief: `corpus-update-brief.md`. The corpus in `content-corpus/` is what the
+content engine reads (synced to Supabase `brand_context`, one row per file,
+keyed by file name). Without this pass the engine would keep writing for the
+old thesis.
+
+## Corpus files
+
+| File | Change |
+|---|---|
+| `positioning/core-positioning.md` | Full rewrite: the gap, its cost, correction not inflation. Compound, own-vs-rent, and the Squarespace/GHL competitor map removed. |
+| `positioning/offers.md` | New. Strategic Session / The Commission / Standing Engagement. "The Compound" retired as an offer name. |
+| `positioning/competitive-landscape.md` | New. Competition is studios, freelancers, agencies, in-house; differentiator is twenty years of agency-scale direction + the excavation method. |
+| `voice/voice-guide.md` | Register kept ("landlords" dropped). Own-vs-rent signature moves and all four Compound tone examples removed. Added: plain sentences over aphorisms, one turn of phrase per section, X-not-Y limited to once per piece. Tone examples now from the live homepage copy. |
+| `voice/vocabulary.md` | Full rewrite. Old terms (Compound, deed, gate/vault/press/grounds, compounds for you) moved to a "retired, never use" list. |
+| `voice/banned-phrases.md` | Added: own the house, hold the deed, your own gates, stop renting, digital sovereignty (any public use), X-not-Y as a default, elevate, unlock, bring your brand to life, level up. |
+| `voice/content-hooks.md` | New. Ninety-second judgment, good firms losing to worse-looking ones, the brand brain, excavation vs. invention, addition by subtraction, big-brand lessons for small firms, AI slop + brand voice. Platform-risk/ownership hooks retired. |
+| `proof/case-studies.md` | Durindal rewritten as the lead case and a commercial outcome. Spec work marked as spec. Origin story and Narrative Alchemists removed (below). |
+| `proof/testimonials.md` | New. Both Durindal quotes, verbatim. |
+| `seo/keyword-clusters.md` | Four new pillars (brand-gap, brand-strategy, brand-voice, creative-direction), each with a signature story. Platform risk, website ownership, platform alternatives, and the Compound model dropped. |
+| `content/image_avoid.md` | Added: stock-photo gloss, every light on, manicured hospitality interiors, smiling at camera, any text in image, collage. |
+| `content/image_style.md` | Unchanged in this pass. The cold-navy doctrine (already live in the DB since Aug 10, previously uncommitted) is now committed. The brief's "warm-neutral grade" was dropped by Chad's decision: cold navy matches the site palette and hero. |
+
+## Removed deliberately
+
+- **Origin story** (the cloud platform that switched the work off, twice).
+  Still true, still why the work is built by hand on infrastructure the client
+  owns, but no longer the sales argument. Moved to
+  `content-corpus/_internal/origin-story.md`. That folder is never synced to the
+  engine.
+- **Narrative Alchemists** (listed as "first commissioned Compound — in build").
+  Inaccurate: the build didn't happen and the client is working with someone
+  else. Removed from proof entirely.
+
+## Outside the corpus (Supabase, not in git)
+
+- **`backend_settings.trend_scan_config`** rewritten: search domains, include
+  terms, keyword clusters, and audience description all targeted own-vs-rent
+  (clusters included `compound`, include terms `own`/`rent`). Now targets the
+  four new pillars; platform-risk terms added to the exclude list. Previous
+  value backed up outside the repo.
+- **`content_calendar`**: the 9 held own-vs-rent topics set to `archived`, each
+  note prefixed "[REJECTED 2026-10-24 …]". Not deleted.
+- **Published posts**: untouched. The five own-vs-rent posts stay live at their
+  URLs and are excluded from the homepage rail. Article pages have no
+  related-posts section, so nothing else surfaces them.
