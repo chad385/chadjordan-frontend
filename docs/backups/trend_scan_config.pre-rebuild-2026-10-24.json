@@ -1,0 +1,42 @@
+{
+  "locale": "en-US",
+  "country": "US",
+  "domains": [
+    "platform lock-in",
+    "deplatforming",
+    "own your data online",
+    "website ownership",
+    "creator platform risk",
+    "AI content strategy",
+    "brand systems for founders",
+    "SaaS vendor lock-in"
+  ],
+  "exclude_terms": [
+    "stocks",
+    "sports",
+    "celebrity",
+    "politics",
+    "crypto price"
+  ],
+  "include_terms": [
+    "own",
+    "ownership",
+    "platform",
+    "rent",
+    "deplatform",
+    "infrastructure",
+    "brand",
+    "2026"
+  ],
+  "max_new_entries": 10,
+  "keyword_clusters": [
+    "ownership",
+    "platform-risk",
+    "infrastructure",
+    "ai-content",
+    "creative-direction",
+    "compound"
+  ],
+  "audience_description": "Founders and brands renting their whole presence from platforms (Squarespace, Wix, Framer, GoHighLevel) who want to own their brand, content, CRM, and infrastructure outright \u2014 not rent it. They value taste, creative direction, and true ownership over cheap/fast/DIY.",
+  "max_headlines_per_domain": 5
+}
