@@ -368,3 +368,35 @@ test drafts (local OpenAI key and both image models check out).
 
 **Test artifacts:** two drafts (unpublished) and their two calendar entries,
 notes marked "TEST 2026-10-24".
+
+## Article writer fixes + test 3 (2026-10-24)
+
+Backend commit 7d09293 on `writer-fixes` (deployed, Worker version 39bac014):
+plain opening instead of a provocative hook, no "reframe" step, 900–1,400
+words, client facts limited to the proof section; an editing pass that cuts
+X-not-Y lines and holds any draft with unsupported client claims (flagged on
+the content board, publish asks for confirmation); image compositions from
+`content/image_compositions` (new corpus file) instead of hardcoded
+"monumental / god rays / surreal" lines; image errors now reported.
+
+**Test 3** (same topic as test 1): ~1,360 words of article text (was ~2,600).
+Durindal facts and quotes correct; one sentence flagged and the draft held
+(a mild embellishment of the method, correctly caught). The editor reported
+0 contrast lines kept, but ~5 milder "not X, but Y" forms remain, so its
+self-count isn't reliable. Also exposed a corpus slip of mine: pass 2 described
+Durindal's thesis as "about defense go-to-market", which isn't in the proof;
+fixed (b5c9a02).
+
+**Image failures explained:** the live Worker's OpenAI key returns "The model
+'gpt-image-1' does not exist" (the local key has access). Every engine image
+since that key was set has silently failed.
+
+**Published images checked:** 4 of 7 off-doctrine — two show the old
+hardcoded compositions (website-ownership: monumental slab + god rays;
+deplatforming: tiny figure before a big building), two are all-warm amber from
+before the cold-navy doctrine (brand-stack audit, SaaS pricing). All four are on
+the off-thesis posts that no longer appear on the homepage. The two rail posts'
+images are on-doctrine but nearly the same shot.
+
+**Test artifacts:** three unpublished drafts and their calendar entries, all
+notes marked "TEST 2026-10-24".
