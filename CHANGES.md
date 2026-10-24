@@ -400,3 +400,28 @@ images are on-doctrine but nearly the same shot.
 
 **Test artifacts:** three unpublished drafts and their calendar entries, all
 notes marked "TEST 2026-10-24".
+
+## Code-level contrast check + test 4 (2026-10-24)
+
+Backend f1668da / 59b665e (deployed, Worker version 9322af63):
+`src/lib/content/contrast.ts` counts "not X, it's Y" constructions
+deterministically, including the softer forms (", not", "not… but",
+"rather than", "instead of", "isn't X — it's Y", two-sentence turns), ignoring
+quoted speech and blockquotes (`npm run test:contrast`, 20 tests). Over the
+limit of one after the editing pass → the model gets the exact sentences to
+rewrite (client-claim sentences frozen), up to two rounds with a recount; still
+over → held, with the remaining sentences listed on the content board.
+
+Recounted with the detector: test 1 had 15, test 2 had 16, test 3 had 8 (the
+editor had reported 0).
+
+**Test 4** (same topic): editor self-reported 0, code found 5, one rewrite
+round → 1 (within limit). Held on one real embellishment ("the gap… was costing
+them in the first impression", not in the proof). The editor also listed a
+supported claim and then said it was fine; tightened in 59b665e.
+
+**OpenAI key, diagnosed:** the live Worker's key and the local key (…TNwA,
+project `proj_9GRp…`) are both in org `personal-vhrf4u`. The local key passes
+the `gpt-image-1` model check, so the org is verified. The Worker's key is a
+different key in that org — most likely a different project, or a project with
+model limits. Not changed yet.
