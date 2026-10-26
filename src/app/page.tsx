@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Reveal from '@/components/compound/Reveal';
 import JournalPreview from '@/components/compound/JournalPreview';
+import LeadForm from '@/components/compound/LeadForm';
 import { WORK_CARDS } from '@/lib/work';
 
 // Rendered per request so the "From the Journal" teaser reflects the latest
@@ -362,10 +363,7 @@ export default function HomePage() {
             ))}
           </div>
           <div className="mt-12">
-            <Link href="/contact"
-              className="label !text-[0.62rem] inline-block border border-[color:var(--border-accent-soft)] !text-text-accent px-6 py-3.5 hover:bg-[color:var(--brand-accent)] hover:!text-[color:var(--surface-page)] transition-colors">
-              Start a conversation →
-            </Link>
+            <LeadForm source="home" />
           </div>
         </Reveal>
       </section>
