@@ -204,3 +204,9 @@ template updates, expect conflicts only in these files; keep the instance side.*
   is otherwise the stock template structure (fine as-is). Removed the stock
   "Keep shaping the starter / Customize the starter" placeholder CTA from the
   bottom of `blog/[slug]/page.tsx` — articles now close into the real footer.
+
+## Homepage lead form (2026-10-26)
+
+- `src/app/page.tsx`: the "Three ways in" section uses `LeadForm source="home"`
+  in place of the `/contact` link (same button label). Deployed version
+  `9bdca871-f79f-4aba-802a-a2e33f2e8567` (previous `103eaf84-4caa-417e-9332-82bb5cc1fb11`).
