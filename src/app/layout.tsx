@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import NavBar from '@/components/layout/NavBar';
 import Footer from '@/components/layout/Footer';
+import PageViewTracker from '@/components/analytics/PageViewTracker';
 import { getTokens, buildRootCssVariables, googleFontsHref } from '@/lib/theme/tokens';
 import './globals.css';
 
@@ -40,6 +41,7 @@ export default function RootLayout({
         <NavBar />
         {children}
         <Footer />
+        <PageViewTracker />
       </body>
     </html>
   );
