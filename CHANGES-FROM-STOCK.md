@@ -210,3 +210,12 @@ template updates, expect conflicts only in these files; keep the instance side.*
 - `src/app/page.tsx`: the "Three ways in" section uses `LeadForm source="home"`
   in place of the `/contact` link (same button label). Deployed version
   `9bdca871-f79f-4aba-802a-a2e33f2e8567` (previous `103eaf84-4caa-417e-9332-82bb5cc1fb11`).
+
+## Retired articles + page-view tracking (2026-10-27)
+
+- `next.config.ts`: permanent redirects to `/blog` for the five
+  retired-positioning articles (archived in `content_objects` and
+  `content_calendar` the same day; bodies kept, reversible by setting status).
+- `src/components/analytics/PageViewTracker.tsx` in the root layout records a
+  `page_view` per page through the stock tracker and `/api/analytics`.
+- Deployed version `1d3542ad-8659-4630-84a9-54543570f936` (previous `9bdca871`).
