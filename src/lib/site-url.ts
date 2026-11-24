@@ -7,7 +7,7 @@ import { headers } from "next/headers";
  */
 export const PRODUCTION_SITE_URL = "https://chadjordan.studio";
 
-export const DEFAULT_OG_PATH = "/hero-late-night.webp";
+export const DEFAULT_OG_PATH = "/og-hall.jpg";
 
 function isLocalHost(hostname: string): boolean {
   const host = hostname.split(",")[0]?.trim().toLowerCase() ?? "";

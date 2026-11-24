@@ -74,23 +74,29 @@ export default function HomePage() {
   return (
     <main>
       {/* ── HERO ─────────────────────────────────────────────── */}
-      <section className="relative min-h-[92vh] flex items-end overflow-hidden">
+      <section
+        className="relative min-h-[92vh] flex items-end overflow-hidden"
+        style={{ background: 'var(--neutral-950)' }}
+      >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/hero-late-night.webp"
-          alt="A founder alone at her desk late at night, studying her own website on a laptop"
-          className="absolute inset-0 w-full h-full object-cover"
-          style={{ objectPosition: '42% 30%' }}
+          src="/hero-hall.webp"
+          srcSet="/hero-hall-1280.webp 1280w, /hero-hall.webp 2560w"
+          sizes="100vw"
+          alt="An empty stone hall in low afternoon light, one closed door."
+          className="absolute inset-0 h-full w-full object-cover object-[52%_center] md:object-center"
           fetchPriority="high"
         />
-        {/* The still is already dark, so the overlay is lighter up top than it
-            was over the video; it only deepens where the copy sits. */}
         <div
           className="absolute inset-0"
-          style={{ background: 'linear-gradient(180deg, rgba(13,27,46,0.25) 0%, rgba(13,27,46,0.1) 40%, rgba(13,27,46,0.92) 100%)' }}
+          style={{ background: 'linear-gradient(90deg, rgba(9,20,33,0.80) 0%, rgba(9,20,33,0.15) 100%)' }}
         />
-        <div className="relative max-w-[1200px] mx-auto w-full px-6 pb-20 pt-40">
-          <p className="label">Creative Director / Brand Strategist</p>
+        <div className="relative max-w-[1200px] mx-auto w-full px-6 pb-24 pt-40 md:pb-28">
+          <span
+            aria-hidden
+            style={{ display: 'block', width: 48, height: 1, background: 'var(--brand-accent)' }}
+          />
+          <p className="label mt-8">Creative Director / Brand Strategist</p>
           <h1 className="font-heading text-white mt-6 leading-[1.04] max-w-[22ch]"
             style={{ fontSize: 'clamp(2.4rem, 5.2vw, 4.6rem)', fontWeight: 400 }}>
             Brand worlds for firms that do serious, discreet work.
