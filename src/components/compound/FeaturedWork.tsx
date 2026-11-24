@@ -1,18 +1,19 @@
+import Link from 'next/link';
 import MosaicFilm from '@/components/compound/MosaicFilm';
 
 export function MosaicPlaceholder() {
   return (
-    <div className="h-full" style={{ border: '0.5px solid var(--border-hairline)' }}>
+    <Link href="/work/durindal" className="group block h-full" style={{ border: '0.5px solid var(--border-hairline)' }}>
       <div className="aspect-video overflow-hidden" style={{ background: '#0d1b2e' }}>
         <MosaicFilm />
       </div>
       <div className="p-6 md:p-8">
-        <h3 className="font-heading text-white text-3xl leading-tight">Durindal · MOSAIC</h3>
+        <h3 className="font-heading text-white text-3xl leading-tight">MOSAIC</h3>
         <p className="text-text-muted mt-3 max-w-[42ch] leading-relaxed">
           A 30-second spot for MOSAIC, Durindal&rsquo;s behavioral briefing software.
         </p>
       </div>
-    </div>
+    </Link>
   );
 }
 
