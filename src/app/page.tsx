@@ -84,15 +84,11 @@ export default function HomePage() {
           srcSet="/hero-hall-1280.webp 1280w, /hero-hall.webp 2560w"
           sizes="100vw"
           alt="An empty stone hall in low afternoon light, one closed door."
-          className="absolute inset-0 h-full w-full object-cover object-[55%_center] md:object-center"
+          className="absolute inset-0 h-full w-full object-cover object-[52%_center] md:object-center"
           fetchPriority="high"
         />
         <div
-          className="absolute inset-0 md:hidden"
-          style={{ background: 'linear-gradient(90deg, rgba(9,20,33,0.88) 0%, rgba(9,20,33,0.72) 100%)' }}
-        />
-        <div
-          className="absolute inset-0 hidden md:block"
+          className="absolute inset-0"
           style={{ background: 'linear-gradient(90deg, rgba(9,20,33,0.80) 0%, rgba(9,20,33,0.15) 100%)' }}
         />
         <div className="relative max-w-[1200px] mx-auto w-full px-6 pb-24 pt-40 md:pb-28">
