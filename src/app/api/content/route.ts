@@ -14,6 +14,7 @@ import { NextRequest } from "next/server";
 import { createAdminClient } from "@/lib/supabase/server";
 import { authenticateRequest, unauthorizedResponse } from "@/lib/api/auth";
 import { jsonResponse, errorResponse, paginatedResponse, parsePagination } from "@/lib/api/response";
+import { toPublicContent } from "@/lib/public-content";
 import type { Enums } from "@/types/database";
 
 export async function GET(request: NextRequest) {
@@ -53,7 +54,9 @@ export async function GET(request: NextRequest) {
 
   if (error) return errorResponse(error.message, 500);
 
-  return paginatedResponse(data || [], count || 0, page, limit);
+  const rows = (data || []) as Record<string, unknown>[];
+  const visible = isAuthenticated ? rows : rows.map((row) => toPublicContent(row));
+  return paginatedResponse(visible, count || 0, page, limit);
 }
 
 export async function POST(request: NextRequest) {

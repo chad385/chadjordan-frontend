@@ -5,6 +5,7 @@
 
 import { createAdminClient } from "@/lib/supabase/server";
 import { generateLlmsTxt } from "@/lib/schema/llms-txt";
+import { getSiteUrl } from "@/lib/site-url";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 3600; // Revalidate every hour
@@ -25,7 +26,8 @@ export async function GET() {
   const txt = generateLlmsTxt(
     entities || [],
     content || [],
-    offers || []
+    offers || [],
+    await getSiteUrl()
   );
 
   return new Response(txt, {

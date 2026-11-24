@@ -22,7 +22,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     .eq("status", "published")
     .order("published_at", { ascending: false });
 
-  // Static pages
+  // Static pages. /audit is an unlinked noindex landing and is omitted on purpose.
   const staticPages: MetadataRoute.Sitemap = [
     {
       url: SITE_URL,

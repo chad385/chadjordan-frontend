@@ -2,8 +2,7 @@
 
 import { useState, type FormEvent } from 'react';
 
-/** Real lead capture wired to the starter's POST /api/leads. Adds the
- *  front-end the starter shipped without. Honeypot `website` silently drops bots. */
+/** Real lead capture wired to POST /api/leads. Honeypot `website` silently drops bots. */
 export default function LeadForm({ source = 'home' }: { source?: string }) {
   const [status, setStatus] = useState<'idle' | 'sending' | 'done' | 'error'>('idle');
   const [error, setError] = useState('');
@@ -15,6 +14,7 @@ export default function LeadForm({ source = 'home' }: { source?: string }) {
     if (data.get('website')) return; // honeypot
     const email = String(data.get('email') || '').trim();
     const name = String(data.get('name') || '').trim();
+    const message = String(data.get('message') || '').trim();
     if (!email) return;
 
     setStatus('sending');
@@ -26,6 +26,7 @@ export default function LeadForm({ source = 'home' }: { source?: string }) {
         body: JSON.stringify({
           email,
           first_name: name || undefined,
+          message: message || undefined,
           source,
           capture_page: typeof window !== 'undefined' ? window.location.pathname : undefined,
           tags: ['compound-inquiry'],
@@ -40,41 +41,55 @@ export default function LeadForm({ source = 'home' }: { source?: string }) {
     }
   }
 
-  if (status === 'done') {
-    return (
-      <div className="hairline pt-6" style={{ borderTop: '0.5px solid var(--border-hairline)' }}>
-        <p className="font-heading text-2xl text-white">The brief is on its way.</p>
-        <p className="text-text-muted mt-2 text-[0.95rem]">
-          You&rsquo;ll hear from me within 48 hours — one page, one decision.
-        </p>
-      </div>
-    );
-  }
-
   return (
-    <form onSubmit={onSubmit} className="flex flex-col gap-3 sm:flex-row sm:items-center max-w-xl">
-      <input type="text" name="website" tabIndex={-1} autoComplete="off"
-        className="hidden" aria-hidden="true" />
-      <input
-        type="text" name="name" placeholder="Name"
-        className="is-round flex-1 bg-transparent px-4 py-3 text-white placeholder:text-white/40 focus:outline-none"
-        style={{ border: '0.5px solid var(--border-hairline)' }}
-      />
-      <input
-        type="email" name="email" required placeholder="Email"
-        className="is-round flex-1 bg-transparent px-4 py-3 text-white placeholder:text-white/40 focus:outline-none"
-        style={{ border: '0.5px solid var(--border-hairline)' }}
-      />
-      <button
-        type="submit" disabled={status === 'sending'}
-        className="label !text-[0.62rem] whitespace-nowrap px-5 py-3 transition-colors disabled:opacity-60"
-        style={{ background: 'var(--brand-accent)', color: 'var(--surface-page)' }}
-      >
-        {status === 'sending' ? 'Sending…' : 'Start a conversation →'}
-      </button>
-      {status === 'error' && (
-        <span className="text-[color:var(--color-error)] text-sm sm:hidden">{error}</span>
+    <div>
+      {status === 'done' ? (
+        <div className="hairline pt-6" style={{ borderTop: '0.5px solid var(--border-hairline)' }}>
+          <p className="font-heading text-2xl text-white">The brief is on its way.</p>
+          <p className="text-text-muted mt-2 text-[0.95rem]">
+            You&rsquo;ll hear from me within 48 hours — one page, one decision.
+          </p>
+        </div>
+      ) : (
+        <form onSubmit={onSubmit} className="flex flex-col gap-3 max-w-xl">
+          <input type="text" name="website" tabIndex={-1} autoComplete="off"
+            className="hidden" aria-hidden="true" />
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+            <input
+              type="text" name="name" placeholder="Name"
+              className="is-round flex-1 bg-transparent px-4 py-3 text-white placeholder:text-white/40 focus:outline-none"
+              style={{ border: '0.5px solid var(--border-hairline)' }}
+            />
+            <input
+              type="email" name="email" required placeholder="Email"
+              className="is-round flex-1 bg-transparent px-4 py-3 text-white placeholder:text-white/40 focus:outline-none"
+              style={{ border: '0.5px solid var(--border-hairline)' }}
+            />
+          </div>
+          <textarea
+            name="message"
+            rows={4}
+            placeholder="Anything I should know?"
+            className="is-round w-full bg-transparent px-4 py-3 text-white placeholder:text-white/40 focus:outline-none resize-y"
+            style={{ border: '0.5px solid var(--border-hairline)' }}
+          />
+          <div>
+            <button
+              type="submit" disabled={status === 'sending'}
+              className="label !text-[0.62rem] whitespace-nowrap px-5 py-3 transition-colors disabled:opacity-60"
+              style={{ background: 'var(--brand-accent)', color: 'var(--surface-page)' }}
+            >
+              {status === 'sending' ? 'Sending…' : 'Start a conversation →'}
+            </button>
+          </div>
+          {status === 'error' && (
+            <span className="text-[color:var(--color-error)] text-sm">{error}</span>
+          )}
+        </form>
       )}
-    </form>
+      <p className="text-text-muted mt-4 max-w-xl text-[0.9rem] leading-relaxed">
+        Inquiries are confidential. NDA on request; nothing is published without your written OK.
+      </p>
+    </div>
   );
 }

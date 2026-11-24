@@ -17,6 +17,8 @@
  */
 
 import type { Tables } from "@/types/database";
+import { configuredSiteUrl } from "@/lib/site-url";
+import { scrubPublicTree } from "@/lib/public-text";
 
 type Entity = Tables<"entities">;
 type EntityRelationship = Tables<"entity_relationships">;
@@ -74,7 +76,7 @@ export function entityToJsonLd(entity: Entity): JsonLdObject {
     }
   }
 
-  return base;
+  return scrubPublicTree(base);
 }
 
 /**
@@ -118,13 +120,14 @@ export function articleJsonLd(content: Tables<"content_objects">, seoMeta?: Tabl
     "@type": content.content_type === "case_study" ? "Article" : "BlogPosting",
     headline: content.title,
     description: content.excerpt || content.subtitle,
-    author: {
-      "@type": "Person",
-      name: content.author_name,
-    },
     datePublished: content.published_at,
     dateModified: content.updated_at,
   };
+
+  const author = content.author_name?.trim();
+  if (author && author.toLowerCase() !== "content agent") {
+    ld.author = { "@type": "Person", name: author };
+  }
 
   if (content.featured_image_url) {
     ld.image = content.featured_image_url;
@@ -140,11 +143,11 @@ export function articleJsonLd(content: Tables<"content_objects">, seoMeta?: Tabl
   // Publisher — set via NEXT_PUBLIC_SITE_NAME and NEXT_PUBLIC_SITE_URL env vars
   ld.publisher = {
     "@type": "Organization",
-    name: process.env.NEXT_PUBLIC_SITE_NAME || "[YOUR BRAND]",
-    url: process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
+    name: process.env.NEXT_PUBLIC_SITE_NAME || "Chad Jordan Studio",
+    url: configuredSiteUrl(),
   };
 
-  return ld;
+  return scrubPublicTree(ld);
 }
 
 /**
@@ -169,15 +172,15 @@ export function breadcrumbJsonLd(
  * Generate WebSite JSON-LD (for the homepage).
  */
 export function websiteJsonLd(): JsonLdObject {
-  const siteName = process.env.NEXT_PUBLIC_SITE_NAME || "[YOUR BRAND]";
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+  const siteName = process.env.NEXT_PUBLIC_SITE_NAME || "Chad Jordan Studio";
+  const siteUrl = configuredSiteUrl();
 
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: siteName,
     url: siteUrl,
-    description: "[Your site description — update this in the websiteJsonLd function or move to an env var]",
+    description: "Brand worlds for firms that do serious, discreet work.",
     publisher: {
       "@type": "Organization",
       name: siteName,

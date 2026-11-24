@@ -3,7 +3,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getOptimizedImageUrl } from '@/lib/image-loader';
+import { unlinkRetiredArticles } from '@/lib/article-links';
 import { createAdminClient } from '@/lib/supabase/server';
+import { absoluteUrl, DEFAULT_OG_PATH, getSiteUrl } from '@/lib/site-url';
 
 export const dynamic = 'force-dynamic';
 
@@ -38,18 +40,22 @@ export async function generateMetadata({
   if (!data) return { title: 'Article Not Found' };
 
   const seo = Array.isArray(data.seo_meta) ? data.seo_meta[0] : data.seo_meta;
-  const socialImage = seo?.og_image_url
-    ? getOptimizedImageUrl(seo.og_image_url, 1200, 75)
-    : undefined;
+  const site = await getSiteUrl();
+  const socialImage = absoluteUrl(
+    seo?.og_image_url ? getOptimizedImageUrl(seo.og_image_url, 1200, 75) : DEFAULT_OG_PATH,
+    site
+  );
 
   const title = seo?.title || data.title;
   const description = seo?.description || data.excerpt || '';
+  const canonical = `/blog/${slug}`;
   // Set share tags per article so it never inherits the homepage's.
   return {
     title,
     description,
-    openGraph: { type: 'article', title, description, ...(socialImage ? { images: [socialImage] } : {}) },
-    twitter: { card: socialImage ? 'summary_large_image' : 'summary', title, description, ...(socialImage ? { images: [socialImage] } : {}) },
+    alternates: { canonical },
+    openGraph: { type: 'article', title, description, url: `${site}${canonical}`, images: [socialImage] },
+    twitter: { card: 'summary_large_image', title, description, images: [socialImage] },
   };
 }
 
@@ -152,7 +158,7 @@ export default async function ArticlePage({
             {article.body && (
               <div
                 className="article-body prose prose-invert prose-lg max-w-none prose-headings:tracking-normal prose-headings:font-semibold prose-p:text-neutral-300 prose-p:leading-8 prose-strong:text-white prose-a:text-white prose-li:text-neutral-300"
-                dangerouslySetInnerHTML={{ __html: article.body }}
+                dangerouslySetInnerHTML={{ __html: unlinkRetiredArticles(article.body) }}
               />
             )}
           </article>

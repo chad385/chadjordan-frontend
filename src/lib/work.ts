@@ -33,7 +33,7 @@ export const CASES: Record<string, Case> = {
     category: 'Spec',
     titleLead: 'NASA × Ralph Lauren',
     titlePivot: 'Black Label — Artemis',
-    subtitle: 'Fashion Editorial · Kennedy Space Center · AI Production · 2025',
+    subtitle: 'Fashion Editorial · Kennedy Space Center · 2025',
     heroImg: `${P}/nasa/nasa_01.png`,
     briefLead: 'A complete fashion editorial',
     briefPivot: 'at the most restricted location on earth.',
@@ -44,9 +44,9 @@ export const CASES: Record<string, Case> = {
     meta: [
       { label: 'Project Type', value: 'Spec Campaign — Fashion Editorial' },
       { label: 'Brand', value: 'NASA × Ralph Lauren Black Label' },
-      { label: 'Location', value: 'Kennedy Space Center (AI-directed)' },
+      { label: 'Location', value: 'Kennedy Space Center' },
       { label: 'Deliverables', value: '9-image campaign, print & digital ready' },
-      { label: 'Tools', value: 'Gemini Flash · CSG PRO Framework' },
+      { label: 'Tools', value: 'CSG PRO' },
       { label: 'Year', value: '2025' },
     ],
     steps: [
@@ -85,7 +85,7 @@ export const CASES: Record<string, Case> = {
       { label: 'Brand', value: 'G-Shock / Casio DW5600' },
       { label: 'Concept', value: 'New England Fisherman, North Atlantic' },
       { label: 'Deliverables', value: '5 campaign shots + full print ad' },
-      { label: 'Tools', value: 'Gemini Flash · CSG PRO Framework' },
+      { label: 'Tools', value: 'CSG PRO' },
       { label: 'Year', value: '2025' },
     ],
     steps: [
@@ -106,11 +106,11 @@ export const CASES: Record<string, Case> = {
 
   panerai: {
     slug: 'panerai',
-    num: '03 — Case Study',
+    num: '03 — Spec',
     category: 'Spec',
     titleLead: 'Panerai Luminor Marina',
     titlePivot: 'Open Water.',
-    subtitle: 'Luxury Watch · Lifestyle Campaign · AI Direction · 2025',
+    subtitle: 'Luxury Watch · Lifestyle Campaign · 2025',
     heroImg: `${P}/panerai/pan_hero.png`,
     briefLead: 'Five frames.',
     briefPivot: 'One watch earning its place in the world.',
@@ -121,9 +121,9 @@ export const CASES: Record<string, Case> = {
     meta: [
       { label: 'Project Type', value: 'Luxury Watch Lifestyle Campaign' },
       { label: 'Brand', value: 'Panerai — Luminor Marina' },
-      { label: 'Format', value: 'Spec / AI Direction' },
+      { label: 'Format', value: 'Spec' },
       { label: 'Deliverables', value: '5-shot campaign, print & digital' },
-      { label: 'Tools', value: 'Gemini Flash · Adobe Firefly · CSG PRO' },
+      { label: 'Tools', value: 'CSG PRO' },
       { label: 'Year', value: '2025' },
     ],
     steps: [
@@ -160,7 +160,7 @@ export const CASES: Record<string, Case> = {
       { label: 'Client', value: 'Durindal — DefenseTech GTM (at the time of the engagement)' },
       { label: 'Positioning', value: 'Tactical Luxury' },
       { label: 'Deliverables', value: 'Identity · Imagery · Site · Brand Framework' },
-      { label: 'Tools', value: 'Gemini Flash · Midjourney · CSG PRO' },
+      { label: 'Tools', value: 'CSG PRO' },
       { label: 'Year', value: '2024' },
     ],
     steps: [
@@ -182,8 +182,8 @@ export const CASES: Record<string, Case> = {
 
   porsche: {
     slug: 'porsche',
-    num: '05 — Personal Exploration',
-    category: 'Exploration',
+    num: '05 — Spec',
+    category: 'Spec',
     titleLead: 'Porsche 928',
     titlePivot: 'The Forgotten Grand Tourer',
     subtitle: 'Automotive Editorial · Mood Direction · Personal Work · 2025',
@@ -195,11 +195,11 @@ export const CASES: Record<string, Case> = {
       'This is a personal project. No brief, no client. Just four shots built to give the 928 the editorial it never had — cinematic, restrained, and honest about what it actually is: a front-engined V8 grand tourer that aged into something genuinely beautiful.',
     ],
     meta: [
-      { label: 'Project Type', value: 'Personal Exploration' },
+      { label: 'Project Type', value: 'Spec' },
       { label: 'Subject', value: 'Porsche 928 — 1977–1995' },
       { label: 'Concept', value: 'The Forgotten Grand Tourer' },
       { label: 'Deliverables', value: '4-shot editorial series' },
-      { label: 'Tools', value: 'Midjourney · Gemini Flash · CSG PRO' },
+      { label: 'Tools', value: 'CSG PRO' },
       { label: 'Year', value: '2025' },
     ],
     steps: [],
@@ -218,10 +218,8 @@ export const CASE_SLUGS = Object.keys(CASES);
 // Homepage grid — 5 internal case studies + CSG PRO linking to its live app.
 export type WorkCard = { img: string; title: string; sub: string; tag: string; href: string; external?: boolean };
 export const WORK_CARDS: WorkCard[] = [
-  { img: '/work/nasa.png', title: 'NASA × Ralph Lauren', sub: 'Artemis Collection · Kennedy Space Center', tag: 'Spec', href: '/work/nasa' },
-  { img: '/work/durindal.png', title: 'Durindal', sub: 'Tactical Luxury · Full Identity · 2024', tag: 'System', href: '/work/durindal' },
-  { img: '/work/gshock.png', title: 'G-Shock DW5600', sub: 'New England Fisherman · 5-Shot Series', tag: 'Spec', href: '/work/gshock' },
-  { img: '/work/panerai.png', title: 'Panerai Luminor Marina', sub: 'Open Water · Lifestyle Campaign', tag: 'Spec', href: '/work/panerai' },
-  { img: '/work/porsche.png', title: 'Porsche 928', sub: 'The Forgotten Grand Tourer · Mood Direction', tag: 'Exploration', href: '/work/porsche' },
-  { img: '/work/csgpro.png', title: 'CSG PRO', sub: 'Visual Direction System · 7-Layer Framework', tag: 'Product', href: 'https://csgpro.app', external: true },
+  { img: '/media/home/nasa.webp', title: 'NASA × Ralph Lauren', sub: 'Artemis Collection · Kennedy Space Center', tag: 'Spec', href: '/work/nasa' },
+  { img: '/media/home/durindal.webp', title: 'Durindal', sub: 'Tactical Luxury · Full Identity · 2024', tag: 'System', href: '/work/durindal' },
+  { img: '/media/home/gshock.webp', title: 'G-Shock DW5600', sub: 'New England Fisherman · 5-Shot Series', tag: 'Spec', href: '/work/gshock' },
+  { img: '/media/home/panerai.webp', title: 'Panerai Luminor Marina', sub: 'Open Water · Lifestyle Campaign', tag: 'Spec', href: '/work/panerai' },
 ];

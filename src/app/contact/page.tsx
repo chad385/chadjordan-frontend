@@ -1,9 +1,23 @@
 import type { Metadata } from 'next';
 import LeadForm from '@/components/compound/LeadForm';
+import { absoluteUrl, configuredSiteUrl, DEFAULT_OG_PATH } from '@/lib/site-url';
+
+const SITE = configuredSiteUrl();
+const TITLE = 'Contact — Chad Jordan · Studio';
+const DESCRIPTION = 'Start a conversation. A 90-minute Strategic Session, and a one-page brief in your hands within 48 hours.';
+const OG_IMAGE = absoluteUrl(DEFAULT_OG_PATH, SITE);
 
 export const metadata: Metadata = {
-  title: 'Contact — Chad Jordan · Studio',
-  description: 'Start a conversation. A 90-minute Strategic Session, and a one-page brief in your hands within 48 hours.',
+  title: TITLE,
+  description: DESCRIPTION,
+  alternates: { canonical: '/contact' },
+  openGraph: {
+    title: TITLE,
+    description: DESCRIPTION,
+    url: `${SITE}/contact`,
+    images: [{ url: OG_IMAGE, alt: 'Chad Jordan · Studio' }],
+  },
+  twitter: { card: 'summary_large_image', title: TITLE, description: DESCRIPTION, images: [OG_IMAGE] },
 };
 
 export default function ContactPage() {

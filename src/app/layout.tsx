@@ -3,18 +3,28 @@ import NavBar from '@/components/layout/NavBar';
 import Footer from '@/components/layout/Footer';
 import PageViewTracker from '@/components/analytics/PageViewTracker';
 import { getTokens, buildRootCssVariables, googleFontsHref } from '@/lib/theme/tokens';
+import { absoluteUrl, configuredSiteUrl, DEFAULT_OG_PATH } from '@/lib/site-url';
 import './globals.css';
 
-const TITLE = 'Chad Jordan · Studio — Brand work for firms that look smaller than they are';
+const SITE = configuredSiteUrl();
+const TITLE = 'Chad Jordan · Studio — Brand worlds for firms that do serious, discreet work.';
 const DESCRIPTION =
-  'Brand work for expert-led firms whose presentation doesn\u2019t match who they are. Twenty years directing brand for companies with budgets, applied to closing the gap between what you\u2019ve done and what a stranger concludes in ninety seconds.';
+  'Brand worlds for firms that do serious, discreet work. Investigations, forensics, incident response, and high-stakes advisory.';
+const OG_IMAGE = absoluteUrl(DEFAULT_OG_PATH, SITE);
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://chadjordan.studio'),
+  metadataBase: new URL(SITE),
   title: TITLE,
   description: DESCRIPTION,
-  openGraph: { title: TITLE, description: DESCRIPTION, siteName: 'Chad Jordan · Studio', type: 'website' },
-  twitter: { card: 'summary', title: TITLE, description: DESCRIPTION },
+  openGraph: {
+    title: TITLE,
+    description: DESCRIPTION,
+    siteName: 'Chad Jordan · Studio',
+    type: 'website',
+    url: SITE,
+    images: [{ url: OG_IMAGE, alt: 'Chad Jordan · Studio' }],
+  },
+  twitter: { card: 'summary_large_image', title: TITLE, description: DESCRIPTION, images: [OG_IMAGE] },
 };
 
 export default function RootLayout({
