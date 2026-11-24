@@ -51,7 +51,7 @@ export function generateLlmsTxt(
   lines.push("Ways to work together: The Sample Audit (how the firm reads to Chad, next to how it reads to a stranger; one page, two stills); The Strategic Session ($1,500, ninety minutes, a one-page brief within 48 hours, credited toward what comes next); The Commission (the full build, by commission); The Standing Engagement (monthly).");
   lines.push("");
   lines.push(`Proof: Durindal (Tactical Luxury, full brand system) — ${SITE_URL}/work/durindal`);
-  lines.push("Durindal MOSAIC: a 20-second spot for MOSAIC, Durindal's behavioral briefing software.");
+  lines.push("Durindal MOSAIC: a 30-second spot for MOSAIC, Durindal's behavioral briefing software.");
   lines.push("CSG PRO: an image system that locks a brand's visual DNA once, then produces on-brand assets for close to free. Durindal uses it. https://csgpro.app");
   lines.push("");
 
