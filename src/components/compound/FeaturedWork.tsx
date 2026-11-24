@@ -9,7 +9,7 @@ export function MosaicPlaceholder() {
       <div className="p-6 md:p-8">
         <h3 className="font-heading text-white text-3xl leading-tight">Durindal · MOSAIC</h3>
         <p className="text-text-muted mt-3 max-w-[42ch] leading-relaxed">
-          A 20-second spot for MOSAIC, Durindal&rsquo;s behavioral briefing software.
+          A 30-second spot for MOSAIC, Durindal&rsquo;s behavioral briefing software.
         </p>
       </div>
     </div>
