@@ -1,18 +1,17 @@
+import MosaicFilm from '@/components/compound/MosaicFilm';
+
 export function MosaicPlaceholder() {
   return (
-    <div
-      className="flex flex-col justify-end min-h-[280px] aspect-video p-6 md:p-8"
-      style={{ background: "#0d1b2e", border: "0.5px solid var(--border-hairline)" }}
-      data-video-slot="mosaic"
-    >
-      <p className="label text-text-accent">Video embed placeholder</p>
-      <h3 className="font-heading text-white text-3xl mt-4 leading-tight">Durindal · MOSAIC</h3>
-      <p className="text-text-muted mt-3 max-w-[42ch] leading-relaxed">
-        A 20-second spot for MOSAIC, Durindal&rsquo;s behavioral briefing software.
-      </p>
-      <p className="label !text-[0.55rem] mt-6 text-white/40">
-        No video file is in the repo yet. The embed replaces this block.
-      </p>
+    <div className="h-full" style={{ border: '0.5px solid var(--border-hairline)' }}>
+      <div className="aspect-video overflow-hidden" style={{ background: '#0d1b2e' }}>
+        <MosaicFilm />
+      </div>
+      <div className="p-6 md:p-8">
+        <h3 className="font-heading text-white text-3xl leading-tight">Durindal · MOSAIC</h3>
+        <p className="text-text-muted mt-3 max-w-[42ch] leading-relaxed">
+          A 20-second spot for MOSAIC, Durindal&rsquo;s behavioral briefing software.
+        </p>
+      </div>
     </div>
   );
 }
