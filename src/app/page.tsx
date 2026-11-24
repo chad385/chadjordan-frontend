@@ -91,14 +91,11 @@ export default function HomePage() {
         />
         <div className="relative max-w-[1200px] mx-auto w-full px-6 pb-20 pt-40">
           <p className="label">Creative Director / Brand Strategist</p>
-          <h1 className="font-heading text-white mt-6 leading-[1.04] max-w-[28ch]"
+          <h1 className="font-heading text-white mt-6 leading-[1.04] max-w-[22ch]"
             style={{ fontSize: 'clamp(2.4rem, 5.2vw, 4.6rem)', fontWeight: 400 }}>
-            You&rsquo;re better than you <em>look.</em>
-          </h1>
-          <p className="font-heading text-white mt-7 max-w-[28ch] text-[1.2rem] md:text-[1.45rem] leading-snug">
             Brand worlds for firms that do serious, discreet work.
-          </p>
-          <p className="text-text-muted mt-5 max-w-[56ch] text-[1.05rem] leading-relaxed">
+          </h1>
+          <p className="text-text-muted mt-7 max-w-[56ch] text-[1.05rem] leading-relaxed">
             I close the gap between what you&rsquo;ve actually done and what a stranger concludes in ninety seconds.
           </p>
           <p className="label mt-8 !text-[0.6rem] text-white/55">
