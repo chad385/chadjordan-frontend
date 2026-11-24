@@ -61,10 +61,9 @@ export default function AuditPage() {
       <section className="relative min-h-[88vh] flex items-end overflow-hidden">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/hero-late-night.webp"
-          alt="A founder alone at her desk late at night, studying her own website on a laptop"
-          className="absolute inset-0 w-full h-full object-cover"
-          style={{ objectPosition: '42% 30%' }}
+          src="/hero-hall.webp"
+          alt="An empty stone hall in low afternoon light, one closed door."
+          className="absolute inset-0 w-full h-full object-cover object-[55%_center] md:object-center"
           fetchPriority="high"
         />
         <div
