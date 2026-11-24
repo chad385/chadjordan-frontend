@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import Reveal from '@/components/compound/Reveal';
+import { absoluteUrl, getSiteUrl } from '@/lib/site-url';
 import { CASES, CASE_SLUGS } from '@/lib/work';
 
 export function generateStaticParams() {
@@ -14,11 +15,15 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!c) return { title: 'Work — Chad Jordan · Studio' };
   const title = `${c.titleLead} ${c.titlePivot} — Chad Jordan · Studio`;
   const description = c.briefBody[0];
+  const site = await getSiteUrl();
+  const image = absoluteUrl(c.heroImg, site);
+  const canonical = `/work/${slug}`;
   return {
     title,
     description,
-    openGraph: { title, description, images: [c.heroImg] },
-    twitter: { card: 'summary_large_image', title, description, images: [c.heroImg] },
+    alternates: { canonical },
+    openGraph: { title, description, url: `${site}${canonical}`, images: [image] },
+    twitter: { card: 'summary_large_image', title, description, images: [image] },
   };
 }
 

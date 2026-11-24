@@ -1,8 +1,30 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Reveal from '@/components/compound/Reveal';
 import JournalPreview from '@/components/compound/JournalPreview';
 import LeadForm from '@/components/compound/LeadForm';
+import { CsgFeature, MosaicPlaceholder } from '@/components/compound/FeaturedWork';
+import { absoluteUrl, configuredSiteUrl, DEFAULT_OG_PATH } from '@/lib/site-url';
 import { WORK_CARDS } from '@/lib/work';
+
+const SITE = configuredSiteUrl();
+const TITLE = 'Chad Jordan · Studio — Brand worlds for firms that do serious, discreet work.';
+const DESCRIPTION =
+  'Brand worlds for firms that do serious, discreet work. Investigations, forensics, incident response, and high-stakes advisory.';
+const OG_IMAGE = absoluteUrl(DEFAULT_OG_PATH, SITE);
+
+export const metadata: Metadata = {
+  title: TITLE,
+  description: DESCRIPTION,
+  alternates: { canonical: '/' },
+  openGraph: {
+    title: TITLE,
+    description: DESCRIPTION,
+    url: SITE,
+    images: [{ url: OG_IMAGE, alt: 'Chad Jordan · Studio' }],
+  },
+  twitter: { card: 'summary_large_image', title: TITLE, description: DESCRIPTION, images: [OG_IMAGE] },
+};
 
 // Rendered per request so the "From the Journal" teaser reflects the latest
 // published articles without a redeploy.
@@ -18,15 +40,16 @@ const METHOD = [
 const DELIVERABLES = [
   { k: 'The brand brain.', v: 'Everything true about you, written down — voice, positioning, proof, the words you\u2019ll never say. The document every other asset is built from, and the one almost nobody has.' },
   { k: 'Identity.', v: 'Logo, type, color, and the rules for using them.' },
-  { k: 'Image world.', v: 'A visual DNA locked once, then applied for close to free. Every image after the first one costs you almost nothing and stays on brand.' },
+  { k: 'Image world.', v: 'A visual DNA locked once in CSG PRO, then applied for close to free.' },
   { k: 'The site.', v: 'Built by hand as a commissioned piece. Yours, on infrastructure you own.' },
   { k: 'The system.', v: 'Content, capture, and the quiet automation that keeps it running.' },
 ];
 
 const OFFERS = [
-  { n: '1', name: 'The Strategic Session', price: '$1,500', note: 'credited toward what comes next', body: 'Ninety minutes. One decision. A one-page brief in your hands within 48 hours.' },
-  { n: '2', name: 'The Commission', price: 'By commission', note: '', body: 'The full build. Identity, image world, site, and system, made so your team can live inside it.' },
-  { n: '3', name: 'The Standing Engagement', price: 'Monthly', note: '', body: 'I keep it running and growing, month over month, so what you built doesn\u2019t go stale.' },
+  { n: '1', name: 'The Sample Audit', price: '', note: '', body: 'How I see your firm next to how a stranger sees it. One page, two stills.' },
+  { n: '2', name: 'The Strategic Session', price: '$1,500', note: 'credited toward what comes next', body: 'Ninety minutes. One decision. A one-page brief in your hands within 48 hours.' },
+  { n: '3', name: 'The Commission', price: 'By commission', note: '', body: 'The full build. Identity, image world, site, and system, made so your team can live inside it.' },
+  { n: '4', name: 'The Standing Engagement', price: 'Monthly', note: '', body: 'I keep it running and growing, month over month, so what you built doesn\u2019t go stale.' },
 ];
 
 const DURINDAL_QUOTES = [
@@ -45,8 +68,6 @@ const DURINDAL_QUOTES = [
 const STATS = [
   ['2×', 'Webby National Honoree'],
   ['20+', 'Years Creative Direction'],
-  ['26M', 'Thrillist Video Views'],
-  ['$2B+', 'Brand Revenue Scale'],
 ];
 
 export default function HomePage() {
@@ -74,11 +95,14 @@ export default function HomePage() {
             style={{ fontSize: 'clamp(2.4rem, 5.2vw, 4.6rem)', fontWeight: 400 }}>
             You&rsquo;re better than you <em>look.</em>
           </h1>
-          <p className="text-text-muted mt-7 max-w-[56ch] text-[1.05rem] leading-relaxed">
+          <p className="font-heading text-white mt-7 max-w-[28ch] text-[1.2rem] md:text-[1.45rem] leading-snug">
+            Brand worlds for firms that do serious, discreet work.
+          </p>
+          <p className="text-text-muted mt-5 max-w-[56ch] text-[1.05rem] leading-relaxed">
             I close the gap between what you&rsquo;ve actually done and what a stranger concludes in ninety seconds.
           </p>
           <p className="label mt-8 !text-[0.6rem] text-white/55">
-            2× Webby National Honoree · $2B+ brand revenue scale · AI Trailblazers, Inizio Evoke
+            2× Webby National Honoree · 20+ years creative direction
           </p>
           <div className="mt-8">
             <Link href="/#work"
@@ -99,17 +123,16 @@ export default function HomePage() {
           </p>
           <h2 className="font-heading text-white mt-4 max-w-[26ch] leading-[1.05]"
             style={{ fontSize: 'clamp(1.8rem, 4.5vw, 3rem)', fontWeight: 400 }}>
-            You feel it every time you pitch.
+            Your work comes by referral. Then the referral looks you up.
           </h2>
           <div className="mt-10 max-w-[58ch] space-y-6 text-text-muted text-[1.05rem] md:text-[1.15rem] leading-[1.8]">
             <p>
-              You know what you&rsquo;re capable of. Your clients know it after six months of working with you. But
-              the people who haven&rsquo;t met you yet are deciding in ninety seconds, from a website you&rsquo;ve
-              been meaning to fix.
+              You know what you&rsquo;re capable of. The people who refer you know it. The stranger they send does not.
+              They look you up and decide in ninety seconds, from a website you&rsquo;ve been meaning to fix.
             </p>
             <p>
-              So you over-explain. You discount to compensate. You watch worse firms win the work because they look
-              like they&rsquo;ve been doing it longer.
+              So you over-explain. You watch the referral cool off. Louder firms get the call because they look like
+              they&rsquo;ve been doing it longer.
             </p>
           </div>
           <p className="text-white mt-14 md:mt-20 pt-10 max-w-[30ch] font-heading text-2xl md:text-[2rem] leading-snug hairline">
@@ -124,7 +147,7 @@ export default function HomePage() {
       <section id="durindal" style={{ background: 'var(--surface-card)' }}>
         <div className="relative min-h-[72vh] flex items-end overflow-hidden">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/work/durindal/dur_hero.png" alt="Durindal brand imagery — a gloved hand on a black dossier"
+          <img src="/media/home/dur-hero.webp" alt="Durindal brand imagery — a gloved hand on a black dossier"
             className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
           <div className="absolute inset-0"
             style={{ background: 'linear-gradient(180deg, rgba(21,35,56,0.35) 0%, rgba(21,35,56,0.2) 45%, rgba(21,35,56,0.96) 100%)' }} />
@@ -151,12 +174,12 @@ export default function HomePage() {
                 </p>
                 <p>
                   We built Tactical Luxury — a complete identity, an image world, a site, and a decision filter their
-                  team still uses daily. By the time we were finished they looked like a firm with a history.
+                  team still uses daily. Their ongoing assets are made in CSG PRO. By the time we were finished they looked like a firm with a history.
                 </p>
               </div>
               <div style={{ border: '0.5px solid var(--border-hairline)' }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/work/durindal/dur_briefing.png" alt="Durindal founder imagery — the briefing"
+                <img src="/media/home/dur-briefing.webp" alt="Durindal founder imagery — the briefing"
                   className="w-full block" loading="lazy" />
               </div>
             </Reveal>
@@ -183,9 +206,9 @@ export default function HomePage() {
 
             <Reveal className="grid gap-4 mt-20 md:mt-28 grid-cols-2 lg:grid-cols-[2fr_1fr_1fr]">
               {[
-                ['/work/durindal/dur_dossier.png', 'Durindal brand imagery — the lobby after hours', 'col-span-2 lg:col-span-1 aspect-[16/9]'],
-                ['/work/durindal/dur_carabiner.png', 'Durindal identity as object — machined carabiner', 'aspect-[4/5]'],
-                ['/work/durindal/dur_window.png', 'Durindal founder imagery — field intelligence, through glass', 'aspect-[4/5]'],
+                ['/media/home/dur-dossier.webp', 'Durindal brand imagery — the lobby after hours', 'col-span-2 lg:col-span-1 aspect-[16/9]'],
+                ['/media/home/dur-carabiner.webp', 'Durindal identity as object — machined carabiner', 'aspect-[4/5]'],
+                ['/media/home/dur-window.webp', 'Durindal founder imagery — field intelligence, through glass', 'aspect-[4/5]'],
               ].map(([src, alt, shape]) => (
                 <div key={src} className={`overflow-hidden lg:aspect-auto lg:h-[340px] ${shape}`}
                   style={{ border: '0.5px solid var(--border-hairline)' }}>
@@ -212,12 +235,16 @@ export default function HomePage() {
         <div className="max-w-[1200px] mx-auto">
           <Reveal>
             <p className="label">Selected work</p>
-            <h2 className="font-heading text-white mt-4 max-w-[22ch] leading-[1.05]"
+            <h2 className="font-heading text-white mt-4 leading-[1.05]"
               style={{ fontSize: 'clamp(1.9rem, 4.5vw, 3rem)', fontWeight: 400 }}>
-              Twenty years of knowing what big <em>looks like.</em>
+              Work
             </h2>
           </Reveal>
-          <div className="grid gap-5 mt-12 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-5 mt-12 lg:grid-cols-2">
+            <MosaicPlaceholder />
+            <CsgFeature />
+          </div>
+          <div className="grid gap-5 mt-5 sm:grid-cols-2 lg:grid-cols-4">
             {WORK_CARDS.map((w) => {
               const inner = (
                 <>
@@ -250,12 +277,6 @@ export default function HomePage() {
               );
             })}
           </div>
-          <Reveal>
-            <p className="text-white mt-14 max-w-[44ch] font-heading text-xl md:text-2xl leading-snug">
-              Most of what I know about making a small company look inevitable, I learned making large ones look that
-              way first.
-            </p>
-          </Reveal>
         </div>
       </section>
 
@@ -270,7 +291,7 @@ export default function HomePage() {
             <p className="label">The method</p>
             <h2 className="font-heading text-white mt-4 max-w-[22ch] leading-[1.05]"
               style={{ fontSize: 'clamp(1.9rem, 4.5vw, 3.1rem)', fontWeight: 400 }}>
-              Nothing invented. Everything <em>excavated.</em>
+              Nothing invented. Only what&rsquo;s <em>true.</em>
             </h2>
           </Reveal>
           <ol className="mt-16 md:mt-24" style={{ borderTop: '0.5px solid var(--border-hairline)' }}>
@@ -347,18 +368,20 @@ export default function HomePage() {
           <p className="label">How to work with me</p>
           <h2 className="font-heading text-white mt-4"
             style={{ fontSize: 'clamp(1.9rem, 4.5vw, 3rem)', fontWeight: 400 }}>
-            Three ways <em>in.</em>
+            Four ways <em>in.</em>
           </h2>
-          <div className="grid gap-px mt-12 lg:grid-cols-3" style={{ background: 'var(--border-hairline)' }}>
+          <div className="grid gap-px mt-12 sm:grid-cols-2 xl:grid-cols-4" style={{ background: 'var(--border-hairline)' }}>
             {OFFERS.map((o) => (
               <div key={o.name} className="p-8 flex flex-col" style={{ background: 'var(--surface-page)' }}>
                 <span className="label !text-[0.6rem] text-text-accent">{o.n}</span>
                 <h3 className="font-heading text-white text-2xl mt-4">{o.name}</h3>
                 <p className="text-text-muted mt-3 text-[0.95rem] leading-relaxed flex-1">{o.body}</p>
-                <div className="mt-6 pt-5 hairline" style={{ borderTop: '0.5px solid var(--border-hairline)' }}>
-                  <div className="font-heading text-white text-xl">{o.price}</div>
-                  {o.note && <div className="label !text-[0.58rem] mt-1">{o.note}</div>}
-                </div>
+                {o.price ? (
+                  <div className="mt-6 pt-5 hairline" style={{ borderTop: '0.5px solid var(--border-hairline)' }}>
+                    <div className="font-heading text-white text-xl">{o.price}</div>
+                    {o.note && <div className="label !text-[0.58rem] mt-1">{o.note}</div>}
+                  </div>
+                ) : null}
               </div>
             ))}
           </div>
@@ -380,15 +403,14 @@ export default function HomePage() {
             </h2>
             <p className="text-text-muted mt-6 leading-relaxed max-w-[60ch]">
               Twenty years directing brand — national broadcast campaigns, Webby-winning digital platforms, DefenseTech
-              identities, AI-powered production systems. A decade of that overlapped with a real estate license, which
+              identities. A decade of that overlapped with a real estate license, which
               taught me how deals actually close and what people are really afraid of when they&rsquo;re about to commit
               money.
             </p>
             <p className="text-text-muted mt-4 leading-relaxed max-w-[60ch]">
-              Currently senior creative lead at Inizio Evoke, a top-10 global healthcare agency, and a member of its AI
-              Trailblazers group.
+              I take on a small number of commissions at a time, so each one gets my full attention.
             </p>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-px mt-10" style={{ background: 'var(--border-hairline)' }}>
+            <div className="grid grid-cols-2 gap-px mt-10 max-w-md" style={{ background: 'var(--border-hairline)' }}>
               {STATS.map(([num, label]) => (
                 <div key={label} className="p-5" style={{ background: 'var(--surface-card)' }}>
                   <div className="font-heading text-text-accent text-3xl">{num}</div>
@@ -399,7 +421,7 @@ export default function HomePage() {
           </div>
           <div className="hairline" style={{ border: '0.5px solid var(--border-hairline)' }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/about-chad.jpg" alt="Chad Jordan directing at the desk — storyboards, lenses, lamp glow"
+            <img src="/media/home/about-chad.webp" alt="Chad Jordan directing at the desk — storyboards, lenses, lamp glow"
               className="w-full h-full object-cover" style={{ objectPosition: '38% 50%' }} />
           </div>
         </Reveal>

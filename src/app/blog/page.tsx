@@ -2,19 +2,28 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { createAdminClient } from '@/lib/supabase/server';
+import { absoluteUrl, configuredSiteUrl, DEFAULT_OG_PATH } from '@/lib/site-url';
 
 export const dynamic = 'force-dynamic';
 
-const SITE_NAME = process.env.NEXT_PUBLIC_SITE_NAME || 'Digital Home';
-const BLOG_LABEL = process.env.NEXT_PUBLIC_BLOG_LABEL || 'Writing';
-const BLOG_TITLE = process.env.NEXT_PUBLIC_BLOG_TITLE || `Writing from ${SITE_NAME}`;
-const BLOG_DESCRIPTION =
-  process.env.NEXT_PUBLIC_BLOG_DESCRIPTION ||
-  `Essays, guides, and practical notes from ${SITE_NAME}.`;
+const SITE_NAME = 'Chad Jordan Studio';
+const BLOG_LABEL = 'Journal';
+const BLOG_TITLE = 'Journal';
+const BLOG_DESCRIPTION = 'Notes from the studio. Brand for firms that do serious, discreet work.';
+const SITE = configuredSiteUrl();
+const OG_IMAGE = absoluteUrl(DEFAULT_OG_PATH, SITE);
 
 export const metadata: Metadata = {
   title: `${BLOG_TITLE} — ${SITE_NAME}`,
   description: BLOG_DESCRIPTION,
+  alternates: { canonical: '/blog' },
+  openGraph: {
+    title: `${BLOG_TITLE} — ${SITE_NAME}`,
+    description: BLOG_DESCRIPTION,
+    url: `${SITE}/blog`,
+    images: [{ url: OG_IMAGE, alt: 'Chad Jordan · Studio' }],
+  },
+  twitter: { card: 'summary_large_image', title: `${BLOG_TITLE} — ${SITE_NAME}`, description: BLOG_DESCRIPTION, images: [OG_IMAGE] },
 };
 
 function formatDate(dateStr: string) {

@@ -62,7 +62,8 @@ export async function POST(request: NextRequest) {
     .single();
 
   if (existing) {
-    // Update existing lead
+    // Update existing lead. Message is not a column on `leads`; it is stored
+    // as a CRM note and must not be written onto the lead row.
     const { data, error } = await supabase
       .from("leads")
       .update({
@@ -77,6 +78,7 @@ export async function POST(request: NextRequest) {
       .single();
 
     if (error) return errorResponse(error.message, 500);
+    await saveLeadMessage(supabase, data.id, body.message);
     return jsonResponse(data);
   }
 
@@ -100,6 +102,8 @@ export async function POST(request: NextRequest) {
 
   if (error) return errorResponse(error.message, 500);
 
+  await saveLeadMessage(supabase, data.id, body.message);
+
   // Link visitor to lead
   if (visitorId) {
     await supabase
@@ -109,4 +113,39 @@ export async function POST(request: NextRequest) {
   }
 
   return jsonResponse(data, 201);
+}
+
+/**
+ * The shared CRM stores a form message as a lead_activities note (same path
+ * as the backend capture route). The table is not in this repo's Database
+ * type. A failed note write must not fail the lead itself.
+ */
+async function saveLeadMessage(
+  supabase: ReturnType<typeof createAdminClient>,
+  leadId: string,
+  message: unknown
+) {
+  if (typeof message !== "string") return;
+  const body = message.trim().slice(0, 4000);
+  if (!body) return;
+
+  const notes = supabase as unknown as {
+    from: (table: "lead_activities") => {
+      insert: (row: Record<string, unknown>) => PromiseLike<{ error: { message: string } | null }>;
+    };
+  };
+
+  try {
+    const { error } = await notes.from("lead_activities").insert({
+      lead_id: leadId,
+      activity_type: "note",
+      title: "Message from form",
+      body,
+      data: { form: "site" },
+      actor: "site-form",
+    });
+    if (error) console.warn("lead message note failed:", error.message);
+  } catch (err) {
+    console.warn("lead message note failed:", err instanceof Error ? err.message : err);
+  }
 }

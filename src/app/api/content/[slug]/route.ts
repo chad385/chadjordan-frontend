@@ -8,6 +8,7 @@ import { NextRequest } from "next/server";
 import { createAdminClient } from "@/lib/supabase/server";
 import { authenticateRequest, unauthorizedResponse } from "@/lib/api/auth";
 import { jsonResponse, errorResponse, notFoundResponse } from "@/lib/api/response";
+import { toPublicContent } from "@/lib/public-content";
 
 export async function GET(
   request: NextRequest,
@@ -30,7 +31,7 @@ export async function GET(
 
   if (error || !data) return notFoundResponse("Content");
 
-  return jsonResponse(data);
+  return jsonResponse(auth.authenticated ? data : toPublicContent(data as Record<string, unknown>));
 }
 
 export async function PATCH(
