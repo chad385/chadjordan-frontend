@@ -55,6 +55,28 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
         </div>
       </section>
 
+      {slug === 'durindal' && (
+        <section id="spot" className="scroll-mt-28 px-6 md:px-12 pt-12 md:pt-16">
+          <div className="max-w-[1200px] mx-auto">
+            <div className="overflow-hidden" style={{ border: '0.5px solid var(--border-hairline)', background: '#0d1b2e' }}>
+              <video
+                className="block w-full aspect-video"
+                controls
+                playsInline
+                preload="metadata"
+                poster="/media/home/mosaic-poster.webp"
+                aria-label="MOSAIC, a spot for Durindal"
+              >
+                <source src="/media/home/mosaic.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <p className="text-text-muted text-[0.82rem] mt-3">
+              MOSAIC — 30-second spot for Durindal
+            </p>
+          </div>
+        </section>
+      )}
+
       {/* BRIEF */}
       <section className="px-6 md:px-12 py-20 md:py-24 hairline" style={{ borderBottom: '0.5px solid var(--border-hairline)' }}>
         <Reveal className="max-w-[1200px] mx-auto grid gap-12 lg:grid-cols-2 lg:gap-20">
